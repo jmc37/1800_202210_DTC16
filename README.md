@@ -6,16 +6,7 @@
 
 ## General Info
 This browser based web application to ...
-<<<<<<< HEAD
-* Hi my name is Jesper. I'm excited about working on this project because I love working in groups
-=======
-
-* Hi my name is Jack. I'm excited about this project because I love working in groups
-
-* Hi my name is Jesper!! I'm excited about this project because I love working in groups
-* Hi my name is Joseph. I'm excited about this project because I love working in groups
-
->>>>>>> 203bc23bf449ab400a3b9fb509f3bbe2858da930
+* Hi my name is Joseph. I'm excited about working on this project because I love working in groups
 	
 ## Technologies
 Technologies used for this project:
