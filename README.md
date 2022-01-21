@@ -10,6 +10,7 @@ This browser based web application to ...
 * Hi my name is Jack. I'm excited about this project because I love working in groups 
 
 
+* Hi my name is Jesper!! I'm excited about this project because I love working in groups
 	
 ## Technologies
 Technologies used for this project:
