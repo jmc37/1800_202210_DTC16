@@ -6,7 +6,10 @@
 
 ## General Info
 This browser based web application to ...
-* Hi my name is Joseph. I'm excited about working on this project because I love working in groups
+
+* Hi my name is Jack. I'm excited about this project because I love working in groups 
+
+
 	
 ## Technologies
 Technologies used for this project:
