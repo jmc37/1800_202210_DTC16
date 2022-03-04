@@ -27,26 +27,36 @@ padding-top: 20px;
     }
 #search_bar_main{
     text-align: center;
-    width: 160px;
+    width: 150px;
     height: 50px;
-    border-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
     margin-bottom: 10px;
     text-align: left;
 }
-#dates_main{
+#dates_start{
     height: 50px;
-    margin-left: -50px;
-    padding-right: 100px;
+    margin-left: -20px;
+    padding-right: 60px;
+    border-width: 2.5px;
+}
+#date_end{
+  height: 50px;
+  margin-right: -25px;
+  margin-left: -50px;
+  padding-right: 30px;
+  border-width: 2.5px;
 }
 #travellers_main{
     height: 50px;
-    margin-left: -100px;
-    width: 20px;
+    width: 50px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
+    
+    
+    
 }
 #submit_btn_main{
-    height: 40px;
     height: 40px;
     border-radius: 50px;
     background-color: red;
