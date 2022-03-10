@@ -13,7 +13,7 @@ function populateInfo() {
                     //get the data fields of the user
                     var userName = userDoc.data().name;
                     var userCity = userDoc.data().city;
-                    var userRole = userDoc.data().role;
+                    var tourGuide = userDoc.data().role;
 
                     //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
@@ -23,7 +23,7 @@ function populateInfo() {
                         document.getElementById("cityInput").value = userCity;
                     }
                     if (userRole != null) {
-                        document.getElementById("roleInput").value = userRole;
+                        document.getElementById("scrambled").value = tourGuide;
                     }
                 })
         } else {
@@ -33,22 +33,17 @@ function populateInfo() {
     });
 }
 
-//call the function to run it 
-populateInfo();
-
 
 function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;
 }
-// editUserInfo();
+editUserInfo();
 
 function saveUserInfo() {
-    //Enable the form fields
-
     userName = document.getElementById('nameInput').value; //get the value of the field with id="nameInput"
     userCity = document.getElementById('cityInput').value; //get the value of the field with id="schoolInput"
-    userRole = document.getElementById('roleInput').value;
+    tourGuide = document.getElementById('scrambled').value;
 
     firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
@@ -61,7 +56,7 @@ function saveUserInfo() {
             currentUser.update({
                     name: userName,
                     city: userCity,
-                    Role: userRole
+                    Guide: tourGuide
                 })
                 .then(() => {
                     console.log("Document successfully updated!");
@@ -71,4 +66,3 @@ function saveUserInfo() {
         }
     })
 }
-// saveUserInfo();`

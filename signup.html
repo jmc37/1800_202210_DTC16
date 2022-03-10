@@ -47,22 +47,30 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
-<div class="container">
+    <div class="container">
         <h1>Welcome to Friend trip </h1>
         <form>
             <fieldset class="mb-3" id="personalInfoFields" disabled>
                 <div class="form-group">
-                    <label >Name</label>
+                    <label>Name</label>
                     <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
                 </div>
                 <div class="form-group">
-                    <label >City</label>
+                    <label>City</label>
                     <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
                 </div>
                 <div class="form-group">
-                    <label >Role</label>
-                    <input type="text" id="roleInput" class="form-control" placeholder="Enter your role">
-                </div>
+                    <!-- radio buttons -->
+                    <label>Are you a tour guide or user? <span
+                            style="display:inline-block; width: 20pt;"></span></label>
+                    <br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" id="scrambled"type="radio" name="scrambled" value="True">
+                        <label>User</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" id="scrambled" type="radio" name="scrambled" value="False">
+                        <label>Tourguide</label>
             </fieldset>
             <div class="d-flex justify-content-end mt-5">
                 <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
@@ -70,8 +78,8 @@
                 <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
             </div>
         </form>
-</div>
-```
+    </div>
+
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
