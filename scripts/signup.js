@@ -60,8 +60,8 @@ function saveUserInfo() {
             // Write update database
             currentUser.update({
                     name: userName,
-                    city: city,
-                    Role: guideoruser
+                    city: usercity,
+                    role: userRole
                 })
                 .then(() => {
                     console.log("Document successfully updated!");
