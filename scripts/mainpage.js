@@ -52,3 +52,7 @@ function displayCards(collection) {
         })
 }
 displayCards("Guides");
+
+function setguideData(id){
+    localStorage.setItem ('guideID', id);
+}

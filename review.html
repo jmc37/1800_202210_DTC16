@@ -37,58 +37,67 @@
     <!------------------------------>
 
    
-    <h3 style="text-align: center;">What was the highlight of your Tour?</h3>
+    
     <div class="container">
-        <!-- Content here -->
-        <label> Guides name? </label>
-        <br>
-        <input id="title" type="text">
+      <br>
+      <h1>Review for <span id="name"></span></h1>
+      <br>
+      <form>
+          <div class="form-group">
+              <label for="exampleFormControlInput1">Add a title</label>
+              <input type="text" class="form-control" id="title" placeholder="Title">
+          </div><br>
+          <div class="form-group">
+              <br>
+              <div class="form-group">
+                  <label for="exampleFormControlTextarea1">How was your tour?</label>
+                  <textarea class="form-control" id="description" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">What could your guide have done to improve?</label>
+                <textarea class="form-control" id="improvement" rows="3"></textarea>
+            </div>
+              <br>
+              <!--Was it fun-->
+              <label>Was it fun? <span style="display:inline-block; width: 26pt;"></span></label>
+      
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="fun" value="Yes">
+                  <label>Fun</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="fun" value="No">
+                  <label>Not Fun</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="fun" value="unSure" checked="">
+                  <label>Not sure</label>
+              </div>
+              <br>
+              <!--Scramble-->
+              <label>Overall Experience <span style="display:inline-block; width: 20pt;"></span></label>
+      
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="rating" value="Yes">
+                  <label>Bad</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="rating" value="No">
+                  <label>alright</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="rating" value="unSure" checked="">
+                  <label>Great</label>
+              </div>
+      
+              <br>
+              <div class="d-flex justify-content-end">
+                  <button type="button" class="btn btn-lg btn-primary pull-right" onclick="writeReview()">Submit</button>
+              </div>
+      </form>
 
-        <!-- text area  -->
-        <div class="mb-2 mt-1">
-            <label for="comment">How was your tour?</label>
-            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
-        </div>
 
-        <!-- radio buttons -->
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-            <label class="btn btn-outline-primary" for="btnradio1">Fun</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio2">Not Fun</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio3">Not Sure</label>
-        </div>
-
-        <!-- drop down menu -->
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                How was the food?
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><button class="dropdown-item" type="button">Really good</button></li>
-                <li><button class="dropdown-item" type="button">Good</button></li>
-                <li><button class="dropdown-item" type="button">Bad</button></li>
-            </ul>
-               <!-- text area  -->
-        <div class="mb-2 mt-1">
-            <label for="comment">What could your guide have done to improve?</label>
-            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
-        </div>
-        </div>
-          <!-- lots of icons in a row  -->
-          <p>Rate your overall experience</p>
-          <i class="material-icons">star</i>
-          <i class="material-icons">star</i>
-          <i class="material-icons">star</i>
-          <i class="material-icons">star_outline</i>
-        <!-- block button  -->
-        <div class="d-grid gap-2">
-            <button id="submit" class="btn btn-warning" type="button">Submit</button>
-        </div>
+  </div>
 
   <!-- Bottom Navbar -->
   <nav class="navbar fixed-bottom navbar-light bg-light">
@@ -112,12 +121,9 @@
         <!---------------------------------------------->
         <!-- Your own JavaScript functions go here    -->
         <!---------------------------------------------->
-        <!-- Link to API keys go here -->
-        <!-- <script src="./scripts/firebaseAPI_TEAM99.js"></script> -->
-
-        <!-- Link to scripts of your own -->
-        <!-- <script src="./scripts/script.js"></script> -->
-
+        <script src="./scripts/FirebaseAPI_TEAM16.js"></script>
+        <script src="./scripts/review.js"></script>
 </body>
 
 </html>
+
