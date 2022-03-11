@@ -23,7 +23,7 @@ function populateInfo() {
                         document.getElementById("cityInput").value = userCity;
                     }
                     if (userRole != null) {
-                        document.getElementById("scrambled").value = tourGuide;
+                        document.getElementById("tour_or_user").value = tourGuide;
                     }
                 })
         } else {
@@ -40,10 +40,10 @@ function editUserInfo() {
 }
 editUserInfo();
 
-function saveUserInfo() {
+function submitUserInfo() {
     userName = document.getElementById('nameInput').value; //get the value of the field with id="nameInput"
     userCity = document.getElementById('cityInput').value; //get the value of the field with id="schoolInput"
-    tourGuide = document.getElementById('scrambled').value;
+    tourGuide = document.getElementById('tour_or_user').value;
 
     firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
@@ -57,7 +57,9 @@ function saveUserInfo() {
                     name: userName,
                     city: userCity,
                     Guide: tourGuide
-                })
+                }).then(function () {
+                    console.log("New user added to firestore");
+                    window.location.assign("index.html");})
                 .then(() => {
                     console.log("Document successfully updated!");
                     document.getElementById('personalInfoFields').disabled = true;
