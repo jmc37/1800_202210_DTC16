@@ -49,25 +49,25 @@ function populateCardsDynamically() {
             allGuides.forEach(doc => {
                 var title = doc.data().title; //gets the name field
                 var tourID = doc.data().id; //gets the unique ID field
-                var hikeLength = doc.data().length; //gets the length field
                 var pictures = doc.data().image;               
                 let testHikeCard = hikeCardTemplate.content.cloneNode(true);
                 testHikeCard.querySelector('.card-img').src = pictures;
                 testHikeCard.querySelector('.card-title').innerHTML = title;
-                testHikeCard.querySelector('.card-length').innerHTML = hikeLength;
                 //NEW LINE: update to display length, duration, last updated
                 testHikeCard.querySelector('.card-length').innerHTML = 
                 "Name: " + doc.data().name + " <br>" +
                 "City: " + doc.data().city + " <br>" ;
+                testHikeCard.querySelector('.card-text').innerHTML = 
+                "Details: " + doc.data().Bio + " <br>" ;
                 // testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);
                 // testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;
                 // //next 2 lines are new for demo#11
                 // //this line sets the id attribute for the <i> tag in the format of "save-hikdID" 
                 // //so later we know which hike to bookmark based on which hike was clicked
-                // testHikeCard.querySelector('i').id = 'save-' + hikeID;
+                testHikeCard.querySelector('i').id = 'save-' + tourID;
                 // // this line will call a function to save the hikes to the user's document             
-                // testHikeCard.querySelector('i').onclick = () => saveBookmark(hikeID);
-                // testHikeCard.querySelector('.read-more').href = "eachHike.html?hikeName="+hikeName +"&id=" + hikeID;
+                testHikeCard.querySelector('i').onclick = () => saveBookmark(tourID);
+                testHikeCard.querySelector('.read-more').href = "saved.html?hikeName="+title +"&id=" + tourID;
                 hikeCardGroup.appendChild(testHikeCard);
             })
 
@@ -78,15 +78,15 @@ function populateCardsDynamically() {
 // It adds the hike to the "bookmarks" array
 // Then it will change the bookmark icon from the hollow to the solid version. 
 //-----------------------------------------------------------------------------
-function saveBookmark(hikeID) {
+function saveBookmark(tourID) {
     currentUser.set({
-            bookmarks: firebase.firestore.FieldValue.arrayUnion(hikeID)
+            bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)
         }, {
             merge: true
         })
         .then(function () {
             console.log("bookmark has been saved for: " + currentUser);
-            var iconID = 'save-' + hikeID;
+            var iconID = 'save-' + tourID;
             //console.log(iconID);
             document.getElementById(iconID).innerText = 'bookmark';
         });
