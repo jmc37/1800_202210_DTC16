@@ -35,14 +35,16 @@
 <body>
   <div id="search_bar_background_main">
     <!-- Search Bar -->
+    <div id="search_guide">
     <input type="text" id="search_bar_main" placeholder="Vancouver" name="search">
     <input type="date" id="dates_start" placeholder="Dec11 " name="search">
     <input type="date" id="date_end" placeholder="Dec 13" name="end">
     <input type="text" id="travellers_main" placeholder="#travellers" name="search">
     <button class="submit_btn_main" id="submit_btn"><i class="fa fa-search"></i></button>
+    </div>
   </div>
   <!-- Filter -->
-  <div class="dropdown">
+  <div id="price" class="dropdown">
     <button class="dropbtn">Price</button>
     <div class="dropdown-content">
       <a href="#">$</a>
@@ -50,7 +52,7 @@
       <a href="#">$$$</a>
     </div>
   </div>
-  <div class="dropdown">
+  <div id="activity" class="dropdown">
     <button class="dropbtn">Activity</button>
     <div class="dropdown-content">
       <a href="#">Food</a>
