@@ -83,7 +83,7 @@ function populateCardsDynamically() {
 //-----------------------------------------------------------------------------
 
 function goToTour() {
-    window.location.href = "guide.html"
+    window.location.href = "tour.html"
 }
 
 
