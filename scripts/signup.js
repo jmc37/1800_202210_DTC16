@@ -32,7 +32,7 @@ function populateInfo() {
         }
     });
 }
-
+populateInfo()
 
 function editUserInfo() {
     //Enable the form fields
@@ -59,7 +59,7 @@ function submitUserInfo() {
                     Guide: tourGuide
                 }).then(function () {
                     console.log("New user added to firestore");
-                    window.location.assign("index.html");})
+                    window.location.assign("mainpage.html");})
                 .then(() => {
                     console.log("Document successfully updated!");
                     document.getElementById('personalInfoFields').disabled = true;
