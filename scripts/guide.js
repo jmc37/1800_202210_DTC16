@@ -58,11 +58,11 @@ displayguide()
 //         languages: "Tagalog",
 //         Bio: "lorem lorem",
 //         details:
-//         "Day 1: Meeting at YVR airport, visit Stanley park. \
-//         lorem ipsum lorem ipsum lorem ipsum \
-//         Day 2: Visit Granville Island \
-//         lorem ipsum lorem ipsum\
-//         Day 3: Hiking to Joffre Lake"}),
+        // "Day 1: Meeting at YVR airport, visit Stanley park. \
+        // lorem ipsum lorem ipsum lorem ipsum \
+        // Day 2: Visit Granville Island \
+        // // lorem ipsum lorem ipsum\
+        // Day 3: Hiking to Joffre Lake"}),
 
         
 //         {merge: true};
