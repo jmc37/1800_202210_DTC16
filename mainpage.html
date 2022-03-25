@@ -58,68 +58,27 @@
       <a href="#">Adventure</a>
     </div>
   </div>
+  <template id="hikeCardTemplate">
+    <div class="card">
+      <img class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">placeholder</h5>
+        <p class="card-length">placeholder</p>
+        <a href="review.html" class="link-primary">Write a review</a>
+        <br>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <a class="btn btn-primary read-more" style="float: right">Read more</a>
+        <i class="material-icons" style="cursor: pointer;">bookmark_border</i>
+      </div>
+    </div>
+  </template>
 
-  <div class="container" style="margin-left: auto; margin-right: auto; width: 72%;">
-    <h1 style="text-align: center;">Guides</h1>
+
+  <div class="container">
+    <h1>Some popular hikes</h1>
     <!-- Here is container for cards  -->
     <div class="container">
-        <div id="Guides-go-here" class="row row-cols-auto" style="padding:40px">
-        </div>
-    </div>
-</div>
-  
-  <!-- Templates for general use, not displayed -->
-  <template id="guideCardTemplate">
-    <div class="card py-2 mx-2" style="width: 18rem; height:28rem ; background-color: lavender;" >
-        <img class="card-image card-img-top" src="..." alt="..." style="width: 100%; height: 50%;">
-        <div class="card-body">
-          <a href="review.html" class="link-primary" style="text-decoration: none;">Write a review</a>
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
-            <a class="btn btn-primary card-href">Get Details</a>
-        </div>
-    </div>
-</template>
-  <!-- country suggestions-->
-
-  <div class="col-md-4" style="margin-left: auto;margin-right: auto;width: 50%">
-    <div class="card mb-4 box-shadow" style=>
-      <img class="card-img-top" src="./images/pexels-a-k-2382868.jpg" alt="Card image cap">
-      <p style="position: absolute; top: 8px;left: 16px;color: white;">Vancouver</p>
-      <div class="card-body">
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum cumque, hic tenetur quod
-          tempore ipsam earum architecto nesciunt blanditiis ut deserunt, unde veniam similique in, molestiae nisi
-          incidunt maxime? Ratione.</p>
-        <div class="d-flex justify-content-between align-items-center">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4" style="margin-left: auto;margin-right: auto;width: 50%">
-    <div class="card mb-4 box-shadow">
-      <img class="card-img-top" src="./images/pexels-joel-m-b-marrinan-9686104.jpg" alt="Card image cap">
-      <p style="position: absolute; top: 8px;left: 16px;color: white;">Korea</p>
-      <div class="card-body">
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus saepe, maiores nulla
-          eaque harum quam reprehenderit iure delectus assumenda officia laudantium neque voluptatum, eveniet dicta,
-          dolore doloremque debitis porro ullam.</p>
-        <div class="d-flex justify-content-between align-items-center">
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4" style="margin-left: auto;margin-right: auto;width: 50%">
-    <div class="card mb-4 box-shadow">
-      <img class="card-img-top" src="./images/pexels-liger-pham-1108701.jpg" alt="Card image cap">
-      <p style="position: absolute; top: 8px;left: 16px; color: white;">Japan</p>
-      <div class="card-body">
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo pariatur error rerum eius
-          fugit facilis possimus voluptate magnam dolorem, corrupti accusantium obcaecati doloremque repellendus. Unde
-          soluta ea tenetur adipisci? Facilis.</p>
-        <div class="d-flex justify-content-between align-items-center">
-        </div>
+      <div id="hikeCardGroup" class="row row-cols-auto">
       </div>
     </div>
   </div>
@@ -162,9 +121,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
 
-  
+
   <script src="./scripts/FirebaseAPI_TEAM16.js"></script>
-  <!-- <script src="./scripts/authentication.js"></script> -->  <!-- only relates to login.html don't copy it to other html-->
+  <!-- <script src="./scripts/authentication.js"></script> -->
+  <!-- only relates to login.html don't copy it to other html-->
   <script src="./scripts/mainpage.js"></script>
 
 
