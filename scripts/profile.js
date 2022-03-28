@@ -13,7 +13,7 @@ function populateInfo() {
                     //get the data fields of the user
                     var userName = userDoc.data().name;
                     var userAddress = userDoc.data().address;
-                    var userEmail = userDoc.data().city;
+                    var userEmail = userDoc.data().email;
                     var userPhone = userDoc.data().phone
 
                     //if the data fields are not empty, then write them in to the form.
