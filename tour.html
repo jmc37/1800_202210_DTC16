@@ -22,9 +22,9 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
+  <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
 
 
 
@@ -32,25 +32,42 @@
 </head>
 
 <body>
-<form action="" style="text-align: center;">
-<h1>Create Tour</h1>
 
-Input Tour Name <input type="text" id="tour name">
-<br>
-<br>
-<form action="/action_page.php">
-Describe your tour <textarea spellcheck="true" name="message" id="description" style="width:500px; height:400px;">Text goes here</textarea>
-  <br>
-<br>
-<br>
-Upload Image of your Tour<input type="file" id="img" name="img" accept="image/*">
-  <input type="submit">
-</form>
-</form>
+  <!-- Title / Welcome-->
+  <h1 style="color: white;">Friend Trip</h1>
+
+  <!-- country suggestions-->
+
+  <div class="guide_area">
+    <div class="col-md-4" style="margin-left: auto;margin-right: auto;width: 50%">
+      <div class="card mb-4 box-shadow">
+        <img class="card-img-top" src="./images/pexels-a-k-2382868.jpg" alt="Card image cap">
+        <p style="position: absolute; top: 8px;left: 16px;color: white; font-size:20px;">Vancouver</p>
+        <div class="guide_profile">
+
+          <p> <b>TOUR TITLE:</b>   <span id="tour_title">Tour_title</span></p>
+          <hr style="height: 2px;">
+          <p> <b>Name:</b>    <span id="name">Name </span></p>
+          <hr style="height: 2px;">
+          <p> <b>City:</b> <span id="city">City</span></p>
+          <hr style="height: 2px;">
+          <p> <b>Bio:</b> <span id="bio">Bio</span></p>
+          <hr style="height: 2px;">
+          <p> <b>Language:</b> <span id="language">Language</span></p>
+          <hr style="height: 2px;">
+          <p> <b>Description:</b> <span id="description">description</span></p>
+          <hr style="height: 2px;">
+          <p> <b>Detail:</b> <span id="detail">detail</span></p>
+          
+          <div class="d-flex justify-content-between align-items-center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
-  <!-- Bottom Navbar -->
+  <!-- Nottom Navbar -->
   <nav class="navbar fixed-bottom navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -87,14 +104,14 @@ Upload Image of your Tour<input type="file" id="img" name="img" accept="image/*"
     -->
 
 
-    <script src="./scripts/FirebaseAPI_TEAM16.js"></script>
-    <script src="./scripts/createtour.js"></script>
-    <!-- <script src="./scripts/mainpage.js"></script> -->
-  
+  <script src="./scripts/FirebaseAPI_TEAM16.js"></script>
+  <!-- <script src="./scripts/authentication.js"></script> -->
+  <!-- <script src="./scripts/mainpage.js"></script> -->
+  <script src="./scripts/createtour.js"></script>
+
 
   </script>
 
 </body>
 
 </html>
-

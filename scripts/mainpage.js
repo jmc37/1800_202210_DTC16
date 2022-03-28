@@ -13,62 +13,64 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
-function writeGuides() {
-    //define a variable for the collection you want to create in Firestore to populate data
-    var GuideRef = db.collection("Tour");
+// function writeGuides() {
+//     //define a variable for the collection you want to create in Firestore to populate data
+//     var GuideRef = db.collection("Tour");
 
-    GuideRef.add({
-        name: "Kyle G.",
-        city: "Burnaby,BC",
-        languages: "Tagalog,English",
-        Bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget maximus magna, vel dictum purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+//     GuideRef.add({
+//         name: "Kyle G.",
+//         city: "Burnaby,BC",
+//         languages: "Tagalog,English",
+//         Bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget maximus magna, vel dictum purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
 
-    });
-    GuideRef.add({
-        name: "Sanghoon L.",
-        city: "Vancouver,BC",
-        languages: "Korean,English",
-        Bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget maximus magna, vel dictum purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
-    });
-    GuideRef.add({
-        name: "Luca H.",
-        city: "Whistler,BC",
-        languages: "Vietnamese,English",
-        Bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget maximus magna, vel dictum purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
-    });
-};
+//     });
+//     GuideRef.add({
+//         name: "Sanghoon L.",
+//         city: "Vancouver,BC",
+//         languages: "Korean,English",
+//         Bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget maximus magna, vel dictum purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+//     });
+//     GuideRef.add({
+//         name: "Luca H.",
+//         city: "Whistler,BC",
+//         languages: "Vietnamese,English",
+//         Bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget maximus magna, vel dictum purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+//     });
+// };
 
 function populateCardsDynamically() {
     let hikeCardTemplate = document.getElementById("hikeCardTemplate");
     let hikeCardGroup = document.getElementById("hikeCardGroup");
 
     db.collection("Guides")
-    .limit(3)
-    .get()
+        .limit(3)
+        .get()
         .then(allGuides => {
             allGuides.forEach(doc => {
                 var title = doc.data().title; //gets the name field
                 var tourID = doc.data().id; //gets the unique ID field
-                var pictures = doc.data().image;               
-                let testHikeCard = hikeCardTemplate.content.cloneNode(true);
-                testHikeCard.querySelector('.card-img').src = pictures;
-                testHikeCard.querySelector('.card-title').innerHTML = title;
+                var pictures = doc.data().image;
+                let testTourCard = TourCardTemplate.content.cloneNode(true);
+                testTourCard.querySelector('.card-img').src = pictures;
+                testTourCard.querySelector('.card-title').innerHTML = title;
                 //NEW LINE: update to display length, duration, last updated
-                testHikeCard.querySelector('.card-length').innerHTML = 
-                "Name: " + doc.data().name + " <br>" +
-                "City: " + doc.data().city + " <br>" ;
-                testHikeCard.querySelector('.card-text').innerHTML = 
-                "Details: " + doc.data().Bio + " <br>" ;
+                testTourCard.querySelector('.card-length').innerHTML =
+                    "Name: " + doc.data().name + " <br>" +
+                    "City: " + doc.data().city + " <br>";
+                testTourCard.querySelector('.card-text').innerHTML =
+                    "Details: " + doc.data().Bio + " <br>";
+                // testHikeCard.querySelector('.card-text').innerHTML = tourDescription;
+                testTourCard.querySelector('.read-more').onclick = () => goToTour();
                 // testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);
                 // testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;
                 // //next 2 lines are new for demo#11
                 // //this line sets the id attribute for the <i> tag in the format of "save-hikdID" 
                 // //so later we know which hike to bookmark based on which hike was clicked
-                testHikeCard.querySelector('i').id = 'save-' + tourID;
+                testTourCard.querySelector('i').id = 'save-' + tourID;
                 // // this line will call a function to save the hikes to the user's document             
-                testHikeCard.querySelector('i').onclick = () => saveBookmark(tourID);
-                testHikeCard.querySelector('.read-more').href = "saved.html?hikeName="+title +"&id=" + tourID;
-                hikeCardGroup.appendChild(testHikeCard);
+                testTourCard.querySelector('i').onclick = () => saveBookmark(tourID);
+                testTourCard.querySelector('.read-more').href = "saved.html?hikeName=" + title + "&id=" + tourID;
+                TourCardGroup.appendChild(testTourCard);
             })
 
         })
@@ -78,7 +80,11 @@ function populateCardsDynamically() {
 // It adds the hike to the "bookmarks" array
 // Then it will change the bookmark icon from the hollow to the solid version. 
 //-----------------------------------------------------------------------------
-function saveBookmark(tourID) {
+function goToTour() {
+    window.location.href = "tour.html"
+}
+
+function saveBookmark(hikeID) {
     currentUser.set({
             bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)
         }, {

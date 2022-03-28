@@ -1,5 +1,7 @@
 var currentUser //put this right after you start script tag before writing any functions.
 
+alert("Take care Hoda! Get well soon...!" )
+
 function populateInfo() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
@@ -32,7 +34,7 @@ function populateInfo() {
         }
     });
 }
-
+populateInfo()
 
 function editUserInfo() {
     //Enable the form fields
@@ -59,7 +61,7 @@ function submitUserInfo() {
                     Guide: tourGuide
                 }).then(function () {
                     console.log("New user added to firestore");
-                    window.location.assign("index.html");})
+                    window.location.assign("mainpage.html");})
                 .then(() => {
                     console.log("Document successfully updated!");
                     document.getElementById('personalInfoFields').disabled = true;

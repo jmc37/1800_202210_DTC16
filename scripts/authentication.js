@@ -22,6 +22,7 @@ var uiConfig = {
                         email: user.email                          //with authenticated user's ID (user.uid)
                     }).then(function () {
                         console.log("New user added to firestore");
+                        setUserName(user.displayName);
                         window.location.assign("signup.html");       //re-direct to main.html after signup
                     })
                     .catch(function (error) {
@@ -40,7 +41,7 @@ var uiConfig = {
     },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
-    signInSuccessUrl: 'signup.html',
+    signInSuccessUrl: 'mainpage.html',
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         //   firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -57,3 +58,7 @@ var uiConfig = {
 };
 
 ui.start('#firebaseui-auth-container', uiConfig);
+
+function setUserName(name){
+    localStorage.setItem ('userName', name);
+}

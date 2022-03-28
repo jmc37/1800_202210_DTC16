@@ -23,14 +23,13 @@ function displayguide() {
 
 
             
-            // document.getElementById('tour_title').innerHTML = guide_tourtitle;
+            document.getElementById('tour_title').innerHTML = guide_tourtitle;
             document.getElementById('name').innerHTML = guidename;
             document.getElementById('city').innerHTML = guidecity;
             document.getElementById('bio').innerHTML = guidebio;
             document.getElementById('language').innerHTML = guidelanguage;
-            // document.getElementById('description').innerHTML = tour_description;
-            
-            // document.getElementById('detail').innerHTML = tour_details;
+            document.getElementById('description').innerHTML = tour_description;            
+            document.getElementById('detail').innerHTML = tour_details;
             
 
         })
