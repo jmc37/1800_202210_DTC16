@@ -42,23 +42,22 @@ function populateCardsDynamically() {
     let hikeCardTemplate = document.getElementById("hikeCardTemplate");
     let hikeCardGroup = document.getElementById("hikeCardGroup");
 
-    db.collection("Guides")
-        .limit(3)
+    db.collection("tours")
+        .limit(10)
         .get()
         .then(allGuides => {
             allGuides.forEach(doc => {
-                var title = doc.data().title; //gets the name field
+                var title = doc.data().tourTitle; //gets the name field
                 var tourID = doc.data().id; //gets the unique ID field
-                var pictures = doc.data().image;
+                var pictures = doc.data().tourImage;
                 let testTourCard = TourCardTemplate.content.cloneNode(true);
                 testTourCard.querySelector('.card-img').src = pictures;
                 testTourCard.querySelector('.card-title').innerHTML = title;
                 //NEW LINE: update to display length, duration, last updated
                 testTourCard.querySelector('.card-length').innerHTML =
-                    "Name: " + doc.data().name + " <br>" +
                     "City: " + doc.data().city + " <br>";
+                    "Details: " + doc.data().description + " <br>";
                 testTourCard.querySelector('.card-text').innerHTML =
-                    "Details: " + doc.data().Bio + " <br>";
                 // testHikeCard.querySelector('.card-text').innerHTML = tourDescription;
                 testTourCard.querySelector('.read-more').onclick = () => goToTour();
                 // testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);

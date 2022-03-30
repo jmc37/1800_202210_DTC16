@@ -4,6 +4,7 @@
 
 
 function populateInfo() {
+    console.log('works')
             //go to the correct user document by referencing to the user uid
             tourT = $("#inputTour").val()
             descript = $("#description").val()
@@ -15,11 +16,12 @@ function populateInfo() {
                 tourTitle: tourT, //Title of tour
                 description: descript, //Tour description
                 tourImage: tourImg, //Url to picture of tour
+                city: "Vancouver" //City added
             });
 }
-populateInfo();
 
 function setup(){
 $('#submit').click(populateInfo)
 }
+
 jQuery(document).ready(setup)
