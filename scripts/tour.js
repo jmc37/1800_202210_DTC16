@@ -1,42 +1,44 @@
-function displayguide() {
+function displaytour() {
 
     //hardcoded for testing. replace it after indiv tourpage is done.
     // db.collection("Guides").doc("5fIBWAYO8ZfxcRuJhKRa").get()
 
     // db.collection("Guides").where("name", "==", __guideName or guideID _from_main_or_tourpage)
-    db.collection("Guides").where("city", "==", "Vancouver")
+    db.collection("tours").where("city", "==", "Vancouver")
     .get()
         .then(doc => {
 
-            guideDocs = doc.docs;
-            thisGuide = guideDocs[0].data();
+            TourDocs = doc.docs;
+            thisTour = TourDocs[1].data();
             //get the data fields of only one guide who is result of query
-            console.log(thisGuide);
-            var guidename = thisGuide.name;
-            var guidebio = thisGuide.Bio;
-            var guidecity = thisGuide.city;
-            var guidelanguage = thisGuide.languages;
-            var guideid = thisGuide.id;
-            var guide_tourtitle = thisGuide.title;
-            var tour_description =thisGuide.description;
-            var tour_details = thisGuide.details;
+            console.log(thisTour);
+            var tourtitle = thisTour.tourTitle;
+            var tourcity = thisTour.city;
+            var tour_description =thisTour.description;
+            var tour_img = thisTour.tourImage;
+            // var tourname = thisTour.name;
+            // var tourbio = thisTour.Bio;
+            // var tourlanguage = thisTour.languages;
+            // var tourid = thisTour.id;
+            // var tour_details = thisTour.details;
 
 
             
-            document.getElementById('tour_title').innerHTML = guide_tourtitle;
-            document.getElementById('name').innerHTML = guidename;
-            document.getElementById('city').innerHTML = guidecity;
-            document.getElementById('bio').innerHTML = guidebio;
-            document.getElementById('language').innerHTML = guidelanguage;
-            document.getElementById('description').innerHTML = tour_description;            
-            document.getElementById('detail').innerHTML = tour_details;
+            document.getElementById('tour_title').innerHTML = tourtitle;
+            document.getElementById('city').innerHTML = tourcity;
+            document.getElementById('description').innerHTML = tour_description;   
+            document.getElementById('tour_img_').setAttribute("src", tour_img)
+            // document.getElementById('bio').innerHTML = tourbio;
+            // document.getElementById('language').innerHTML = tourlanguage;
+            // document.getElementById('name').innerHTML = tourname;
+            // document.getElementById('detail').innerHTML = tour_details;
             
 
         })
 }
 
 
-displayguide()
+displaytour()
 
 
 // function writeGuides() {
