@@ -48,49 +48,36 @@
     <!-- Search Bar -->
     <input type="text" id="search_bar" placeholder="Where would you like to go?"name="search" > 
     <button class="submit_btn" id="submit_btn" onclick="window.location.href='mainpage.html'"><i class="fa fa-search"></i></button>
+
+      <!-- country suggestions-->
 </div> 
-  <!-- country suggestions-->
+</div>
+<template id="TourCardTemplate">
+  <div class="card">
+    <img class="card-img">
+    <div class="card-body">
+      <h5 class="card-title">placeholder</h5>
+      <p class="card-length">placeholder</p>
+      <a href="review.html" class="link-primary">Write a review</a>
+      <br>
+      <p class="card-text"></p>
+      <a class="btn btn-primary read-more" style="float: right">Read more</a>
+      <i class="material-icons" style="cursor: pointer;">bookmark_border</i>
+    </div>
+  </div>
+</template>
 
-  <div class="col-md-4" style="margin-left: auto;margin-right: auto;width: 50%">
-    <div class="card mb-4 box-shadow" style=>
-      <img class="card-img-top" src="./images/pexels-a-k-2382868.jpg" alt="Card image cap">
-      <p style="position: absolute; top: 8px;left: 16px;color: white;">Vancouver</p>
-      <div class="card-body">
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum cumque, hic tenetur quod
-          tempore ipsam earum architecto nesciunt blanditiis ut deserunt, unde veniam similique in, molestiae nisi
-          incidunt maxime? Ratione.</p>
-        <div class="d-flex justify-content-between align-items-center">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4" style="margin-left: auto;margin-right: auto;width: 50%">
-    <div class="card mb-4 box-shadow">
-      <img class="card-img-top" src="./images/pexels-joel-m-b-marrinan-9686104.jpg" alt="Card image cap">
-      <p style="position: absolute; top: 8px;left: 16px;color: white;">Korea</p>
-      <div class="card-body">
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus saepe, maiores nulla
-          eaque harum quam reprehenderit iure delectus assumenda officia laudantium neque voluptatum, eveniet dicta,
-          dolore doloremque debitis porro ullam.</p>
-        <div class="d-flex justify-content-between align-items-center">
 
-        </div>
-      </div>
+<div class="container" style="padding-bottom: 150px; padding-top: 120px;">
+  <h1 style="text-align: center;">Some popular Tours</h1>
+  <!-- Here is container for cards  -->
+  <div class="container">
+    <div id="TourCardGroup" >
     </div>
   </div>
-  <div class="col-md-4" style="margin-left: auto;margin-right: auto;width: 50%">
-    <div class="card mb-4 box-shadow">
-      <img class="card-img-top" src="./images/pexels-liger-pham-1108701.jpg" alt="Card image cap">
-      <p style="position: absolute; top: 8px;left: 16px; color: white;">Japan</p>
-      <div class="card-body">
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo pariatur error rerum eius
-          fugit facilis possimus voluptate magnam dolorem, corrupti accusantium obcaecati doloremque repellendus. Unde
-          soluta ea tenetur adipisci? Facilis.</p>
-        <div class="d-flex justify-content-between align-items-center">
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+
+
   <!-- Bottom Navbar -->
   <nav class="navbar fixed-bottom navbar-light bg-light">
     <div class="container">
