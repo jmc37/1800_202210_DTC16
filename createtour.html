@@ -32,21 +32,23 @@
 </head>
 
 <body>
-<form action="" style="text-align: center;">
-<h1>Create Tour</h1>
+  <form style="text-align: center;">
+    <h1>Create Tour</h1>
 
-Input Tour Name <input type="text" id="inputTour">
-<br>
-<br>
-<form action="/action_page.php">
-Describe your tour <textarea spellcheck="true" name="message" id="description" style="width:500px; height:400px;">Text goes here</textarea>
-  <br>
-<br>
-<br>
-Input Tour Image link <input type="text" id="tourImage">
-  <input type="submit" id="submit">
-</form>
-</form>
+    Input Tour Name <input type="text" id="inputTour">
+    <br>
+    <br>
+    <form>
+      Describe your tour
+      <br>
+      <input type="text" id="description" value="Text goes here" style="width:500px; height:400px;">
+      <br>
+      <br>
+      <br>
+      Input Tour Image link <input type="text" id="tourImage">
+      <input type="button" value="submit" id="submit">
+    </form>
+  </form>
 
 
 
@@ -87,14 +89,13 @@ Input Tour Image link <input type="text" id="tourImage">
     -->
 
 
-    <script src="./scripts/FirebaseAPI_TEAM16.js"></script>
-    <script src="./scripts/createtour.js"></script>
-    <!-- <script src="./scripts/mainpage.js"></script> -->
-  
+  <script src="./scripts/FirebaseAPI_TEAM16.js"></script>
+  <script src="./scripts/createtour.js"></script>
+  <!-- <script src="./scripts/mainpage.js"></script> -->
+
 
   </script>
 
 </body>
 
 </html>
-
