@@ -1,15 +1,38 @@
+var tourID = null
+
+var currentUser;
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        currentUser = db.collection("users").doc(user.uid); //global
+        currentUser.get().then(userDoc => {
+        //get the user name
+        var user_Name = userDoc.data().name;
+        console.log(user_Name);
+        })
+
+        // the following functions are always called when someone is logged in
+        displaytour();
+    } else {
+        // No user is signed in.
+        console.log("No user is signed in");
+        window.location.href = "login.html";
+    }
+});
+
+
 function displaytour() {
 
     //hardcoded for testing. replace it after indiv tourpage is done.
     // db.collection("Guides").doc("5fIBWAYO8ZfxcRuJhKRa").get()
 
     // db.collection("Guides").where("name", "==", __guideName or guideID _from_main_or_tourpage)
-    db.collection("tours").where("city", "==", "Vancouver")
+    db.collection("tours").where("city", "==", "van")
     .get()
-        .then(doc => {
+        .then(doc => {            
+            console.log(doc)
 
             TourDocs = doc.docs;
-            thisTour = TourDocs[1].data();
+            thisTour = TourDocs[0].data();
             //get the data fields of only one guide who is result of query
             console.log(thisTour);
             var tourtitle = thisTour.tourTitle;
@@ -19,7 +42,7 @@ function displaytour() {
             // var tourname = thisTour.name;
             // var tourbio = thisTour.Bio;
             // var tourlanguage = thisTour.languages;
-            // var tourid = thisTour.id;
+            var tourID = thisTour.tourID;
             // var tour_details = thisTour.details;
 
 
@@ -28,6 +51,7 @@ function displaytour() {
             document.getElementById('city').innerHTML = tourcity;
             document.getElementById('description').innerHTML = tour_description;   
             document.getElementById('tour_img_').setAttribute("src", tour_img)
+            document.getElementById('book_btn').onclick = () => savetour(tourID);
             // document.getElementById('bio').innerHTML = tourbio;
             // document.getElementById('language').innerHTML = tourlanguage;
             // document.getElementById('name').innerHTML = tourname;
@@ -38,7 +62,35 @@ function displaytour() {
 }
 
 
-displaytour()
+// displaytour()
+
+
+function savetour(tourID) {
+    currentUser.set({
+            bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)
+        }, {
+            merge: true
+        })
+        .then(function () {
+            console.log("Tour has been saved");
+            // var iconID = 'save-' + hikeID;
+            //console.log(iconID);
+            document.getElementById('book_btn').innerText = 'booked';
+        });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // function writeGuides() {
