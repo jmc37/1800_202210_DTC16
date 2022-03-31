@@ -35,3 +35,18 @@ function populateCardsDynamically() {
         })
 }
 populateCardsDynamically();
+
+
+
+function setSearchBarCityName(){
+    var searchkeyword = $('#search_bar').val()
+    console.log(searchkeyword)
+    localStorage.setItem ('searchkeyword', searchkeyword);
+}
+
+
+function setup() {
+    $('.search_btn').click(setSearchBarCityName);
+}
+
+$(document).ready(setup);
