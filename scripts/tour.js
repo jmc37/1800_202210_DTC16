@@ -52,7 +52,7 @@ function displaytour() {
             // var tour_details = thisTour.details;
 
 
-            
+            document.getElementById('city_img_name').innerHTML = tourcity;
             document.getElementById('tour_title').innerHTML = tourtitle;
             document.getElementById('city').innerHTML = tourcity;
             document.getElementById('description').innerHTML = tour_description;   
