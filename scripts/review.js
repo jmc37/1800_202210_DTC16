@@ -1,6 +1,6 @@
-let guideID = localStorage.getItem("guideID");
+let guideID = localStorage.getItem("tourID");
 
-db.collection("Guides").where("id", "==", guideID)
+db.collection("Guides").where("id", "==", tourID)
             .get()
             .then(queryGuide => {
                 //see how many results you have got from the query

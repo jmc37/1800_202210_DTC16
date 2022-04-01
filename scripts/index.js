@@ -8,7 +8,7 @@ function populateCardsDynamically() {
         .then(allGuides => {
             allGuides.forEach(doc => {
                 var title = doc.data().tourTitle; //gets the name field
-                var tourID = doc.data().id; //gets the unique ID field
+                var tourID = doc.data().tourID; //gets the unique ID field
                 var pictures = doc.data().tourImage;
                 let testTourCard = TourCardTemplate.content.cloneNode(true);
                 testTourCard.querySelector('.card-img').src = pictures;

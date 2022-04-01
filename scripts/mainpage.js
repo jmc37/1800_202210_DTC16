@@ -48,7 +48,7 @@ function populateCardsDynamically() {
         .then(allGuides => {
             allGuides.forEach(doc => {
                 var title = doc.data().tourTitle; //gets the name field
-                var tourID = doc.data().id; //gets the unique ID field
+                var tourID = doc.data().tourID; //gets the unique ID field
                 var pictures = doc.data().tourImage;
                 let testTourCard = TourCardTemplate.content.cloneNode(true);
                 testTourCard.querySelector('.card-img').src = pictures;
@@ -63,7 +63,7 @@ function populateCardsDynamically() {
                 // testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);
                 // testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;
                 // //next 2 lines are new for demo#11
-                // //this line sets the id attribute for the <i> tag in the format of "save-hikdID" 
+                // //this line sets the id attribute for the <i> tag in the format of "save-tourID" 
                 // //so later we know which hike to bookmark based on which hike was clicked
                 testTourCard.querySelector('i').id = 'save-' + tourID;
                 // // this line will call a function to save the hikes to the user's document             
@@ -83,7 +83,7 @@ function goToTour() {
     window.location.href = "tour.html"
 }
 
-function saveBookmark(hikeID) {
+function saveBookmark(tourID) {
     currentUser.set({
             bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)
         }, {
@@ -98,5 +98,5 @@ function saveBookmark(hikeID) {
 }
 
 function setHikeData(id) {
-    localStorage.setItem('hikeID', id);
+    localStorage.setItem('tourID', id);
 }
