@@ -24,7 +24,7 @@ function populateCardsDynamically() {
         .then(allGuides => {
             allGuides.forEach(doc => {
                 var title = doc.data().tourTitle; //gets the name field
-                var tourID = doc.data().id; //gets the unique ID field
+                var tourID = doc.data().tourID; //gets the unique ID field
                 var pictures = doc.data().tourImage;
                 let testTourCard = TourCardTemplate.content.cloneNode(true);
                 testTourCard.querySelector('.card-img').src = pictures;
@@ -44,7 +44,7 @@ function populateCardsDynamically() {
                 testTourCard.querySelector('i').id = 'save-' + tourID;
                 // // this line will call a function to save the hikes to the user's document             
                 testTourCard.querySelector('i').onclick = () => saveBookmark(tourID);
-                testTourCard.querySelector('.read-more').href = "saved.html?hikeName=" + title + "&id=" + tourID;
+                testTourCard.querySelector('.read-more').href = "tour.html?title=" + title + "&id=" + tourID;
                 TourCardGroup.appendChild(testTourCard);
             })
 
