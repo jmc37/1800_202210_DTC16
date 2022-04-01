@@ -21,15 +21,15 @@ function getBookmarks(user) {
                     
                     if (size == 1) {
                         var doc = queryData[0].data();
-                        var tourName = doc.tourTitle; //gets the name field
+                        var title = doc.tourTitle; //gets the name field
                         var tourID = doc.tourID; //gets the unique ID field
                         var tourCity = doc.city; //gets the length field
                         var tourDescription = doc.description;
                         let newCard = CardTemplate.content.cloneNode(true);
-                        newCard.querySelector('.card-title').innerHTML = tourName;
+                        newCard.querySelector('.card-title').innerHTML = title;
                         newCard.querySelector('.card-length').innerHTML = tourCity;
                         newCard.querySelector('.card-text').innerHTML = tourDescription;
-                        newCard.querySelector('a').onclick = () => setHikeData(hikeID);
+                        newCard.querySelector('.get_detail').href = "tour.html?title=" + title + "&id=" + tourID;
                         newCard.querySelector('img').src = doc.tourImage;
                         hikeCardGroup.appendChild(newCard);
                     } else {
