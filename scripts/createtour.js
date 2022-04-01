@@ -13,6 +13,8 @@ function populateInfo() {
     city_value = $('#city_name option:selected').val()
     tourNickname = $("#tour_nickname").val()
     console.log(city_value)
+
+    alert("submitted!")
     //define a variable for the collection you want to create in Firestore to populate data
 
     var tourRef = db.collection("tours")

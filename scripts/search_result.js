@@ -60,7 +60,7 @@ function populateCardsDynamically() {
                 testTourCard.querySelector('.card-length').innerHTML =
                     "City: " + doc.data().city + " <br>";
                     "Details: " + doc.data().description + " <br>";
-                testTourCard.querySelector('.card-text').innerHTML =
+                // testTourCard.querySelector('.card-text').innerHTML =
                 // testHikeCard.querySelector('.card-text').innerHTML = tourDescription;
                 testTourCard.querySelector('.read-more').onclick = () => goToTour();
                 // testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);
@@ -71,7 +71,8 @@ function populateCardsDynamically() {
                 testTourCard.querySelector('i').id = 'save-' + tourID;
                 // // this line will call a function to save the Tours to the user's document             
                 testTourCard.querySelector('i').onclick = () => saveBookmark(tourID);
-                testTourCard.querySelector('.read-more').href = "saved.html?hikeName=" + title + "&id=" + tourID;
+                // testTourCard.querySelector('.read-more').href = "saved.html?hikeName=" + title + "&id=" + tourID;
+                testTourCard.querySelector('.read-more').href = "tour.html?title=" + title + "&id=" + tourID;
                 TourCardGroup.appendChild(testTourCard);
             })
 
