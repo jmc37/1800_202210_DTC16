@@ -73,7 +73,7 @@ function displaytour() {
 
 function savetour(tourID) {
     currentUser.set({
-            bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)
+            booked: firebase.firestore.FieldValue.arrayUnion(tourID)
         }, {
             merge: true
         })
