@@ -19,6 +19,12 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
+// function showDetails() {
+    // create a URL object
+var params = new URL(window.location.href);
+var id = params.searchParams.get("id");               //parse "id"
+var title = params.searchParams.get("title");
+// }
 
 function displaytour() {
 
@@ -26,7 +32,7 @@ function displaytour() {
     // db.collection("Guides").doc("5fIBWAYO8ZfxcRuJhKRa").get()
 
     // db.collection("Guides").where("name", "==", __guideName or guideID _from_main_or_tourpage)
-    db.collection("tours").where("city", "==", "van")
+    db.collection("tours").where("tourID", "==", id)
     .get()
         .then(doc => {            
             console.log(doc)
