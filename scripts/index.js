@@ -1,3 +1,14 @@
+var currentUser;
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        currentUser = db.collection("users").doc(user.uid); //global
+        console.log(currentUser);
+    } else {
+        // No user is signed in.
+        console.log("No user is signed in");
+    }
+});
+
 function populateCardsDynamically() {
     let hikeCardTemplate = document.getElementById("hikeCardTemplate");
     let hikeCardGroup = document.getElementById("hikeCardGroup");
@@ -33,6 +44,19 @@ function populateCardsDynamically() {
 populateCardsDynamically();
 
 
+function saveBookmark(tourID) {
+    currentUser.set({
+            bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)
+        }, {
+            merge: true
+        })
+        .then(function () {
+            console.log("bookmark has been saved for: " + currentUser);
+            var iconID = 'save-' + tourID;
+            //console.log(iconID);
+            document.getElementById(iconID).innerText = 'bookmark';
+        });
+}
 
 function setSearchBarCityName(){
     var searchkeyword = $('#search_bar').val()
