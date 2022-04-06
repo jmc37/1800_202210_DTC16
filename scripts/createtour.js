@@ -14,6 +14,7 @@ function populateInfo() {
     tourNickname = $("#tour_nickname").val()
     activity = $('#activity_name option:selected').val()
     price = $('#tour_price option:selected').val()
+    actual_price = $('#tour_price option:selected').text()
     console.log(city_value)
 
     alert("submitted!")
@@ -27,7 +28,8 @@ function populateInfo() {
         city: city_value, //City added
         tourID: city_value + tourNickname,
         tourActivity: activity,
-        tourPrice: price
+        tourPrice: price,
+        tourActualPrice: actual_price
     });
 }
 

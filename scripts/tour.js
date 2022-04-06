@@ -39,6 +39,8 @@ function displaytour() {
             var tourcity = thisTour.city;
             var tour_description =thisTour.description;
             var tour_img = thisTour.tourImage;
+            var tour_price = thisTour.tourActualPrice
+            var tour_activity = thisTour.tourActivity
             // var tourname = thisTour.name;
             // var tourbio = thisTour.Bio;
             // var tourlanguage = thisTour.languages;
@@ -50,6 +52,8 @@ function displaytour() {
             document.getElementById('tour_title').innerHTML = tourtitle;
             document.getElementById('city').innerHTML = tourcity;
             document.getElementById('description').innerHTML = tour_description;   
+            document.getElementById('price').innerHTML = tour_price;   
+            document.getElementById('activity').innerHTML = tour_activity;   
             document.getElementById('tour_img_').setAttribute("src", tour_img)
             document.getElementById('book_btn').onclick = () => savetour(tourID);
             // document.getElementById('bio').innerHTML = tourbio;
