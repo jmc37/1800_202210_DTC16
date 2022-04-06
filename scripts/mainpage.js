@@ -3,9 +3,6 @@ firebase.auth().onAuthStateChanged(user => {
     if (user) {
         currentUser = db.collection("users").doc(user.uid); //global
         console.log(currentUser);
-
-        // the following functions are always called when someone is logged in
-        populateCardsDynamically();
     } else {
         // No user is signed in.
         console.log("No user is signed in");
@@ -49,6 +46,7 @@ function populateCardsDynamically() {
 
         })
 }
+populateCardsDynamically();
 //-----------------------------------------------------------------------------
 // This function is called whenever the user clicks on the "bookmark" icon.
 // It adds the hike to the "bookmarks" array

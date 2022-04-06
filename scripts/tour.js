@@ -9,9 +9,8 @@ firebase.auth().onAuthStateChanged(user => {
         var user_Name = userDoc.data().name;
         console.log(user_Name);
         })
-
         // the following functions are always called when someone is logged in
-        displaytour();
+
     } else {
         // No user is signed in.
         console.log("No user is signed in");
@@ -27,10 +26,6 @@ var title = params.searchParams.get("title");
 
 function displaytour() {
 
-    //hardcoded for testing. replace it after indiv tourpage is done.
-    // db.collection("Guides").doc("5fIBWAYO8ZfxcRuJhKRa").get()
-
-    // db.collection("Guides").where("name", "==", __guideName or guideID _from_main_or_tourpage)
     db.collection("tours").where("tourID", "==", id)
     .get()
         .then(doc => {            
@@ -67,7 +62,7 @@ function displaytour() {
 }
 
 
-// displaytour()
+displaytour()
 
 
 function savetour(tourID) {
