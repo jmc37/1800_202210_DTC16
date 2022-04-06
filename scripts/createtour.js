@@ -12,6 +12,8 @@ function populateInfo() {
     tourImg = $("#tourImage").val()
     city_value = $('#city_name option:selected').val()
     tourNickname = $("#tour_nickname").val()
+    activity = $('#activity_name option:selected').val()
+    price = $('#tour_price option:selected').val()
     console.log(city_value)
 
     alert("submitted!")
@@ -23,7 +25,9 @@ function populateInfo() {
         description: descript, //Tour description
         tourImage: tourImg, //Url to picture of tour
         city: city_value, //City added
-        tourID: city_value + tourNickname
+        tourID: city_value + tourNickname,
+        tourActivity: activity,
+        tourPrice: price
     });
 }
 
