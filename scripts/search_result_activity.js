@@ -14,13 +14,14 @@ firebase.auth().onAuthStateChanged(user => {
 
 
 var searchkeyword = localStorage.getItem("searchkeyword");
+var searchfilter = localStorage.getItem("searchfilter");
 
 
 function populateCardsDynamically() {
     let hikeCardTemplate = document.getElementById("hikeCardTemplate");
     let hikeCardGroup = document.getElementById("hikeCardGroup");
 
-    db.collection("tours").where("city", "==", searchkeyword)
+    db.collection("tours").where("city", "==", searchkeyword).where("tourActivity", "==", searchfilter)
         .limit(10)
         .get()
         .then(allGuides => {
@@ -83,7 +84,6 @@ function setHikeData(id) {
 }
 
 
-
 function setSearchFilter() {
     var searchfilter = $(this).attr("id")
     console.log(searchfilter)
@@ -96,6 +96,7 @@ function setup() {
 }
 
 $(document).ready(setup);
+
 
 // function writeGuides() {
 //     //define a variable for the collection you want to create in Firestore to populate data
