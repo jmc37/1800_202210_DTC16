@@ -1,3 +1,5 @@
+var tourID=null
+
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         getBookmarks(user)
@@ -30,6 +32,7 @@ function getBookmarks(user) {
                         newCard.querySelector('.card-title').innerHTML = title;
                         newCard.querySelector('.card-length').innerHTML = tourCity;
                         newCard.querySelector('.card-text').innerHTML = tourDescription;
+                        newCard.querySelector('a').onclick = () => setTourData(tourID);
                         newCard.querySelector('.get_detail').href = "tour.html?title=" + title + "&id=" + tourID;
                         newCard.querySelector('img').src = doc.tourImage;
                         hikeCardGroup.appendChild(newCard);
@@ -42,3 +45,16 @@ function getBookmarks(user) {
             });
         })
 }
+
+function setTourData(tourID){
+    console.log(tourID)
+    localStorage.setItem('tourID', tourID);
+}
+
+
+
+// function setup() {
+//     $('#review_btn').click(setTourID);
+// }
+
+// $(document).ready(setup);
