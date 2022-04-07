@@ -51,7 +51,7 @@ function getBookmarks(user) {
                         newCard.querySelector('.get_detail').href = "tour.html?title=" + title + "&id=" + tourID;
                         newCard.querySelector('img').src = doc.tourImage;
                         hikeCardGroup.appendChild(newCard);
-                        document.getElementById('cancel_btn').onclick = () => cancelTour();
+                        document.getElementById('cancel_btn').onclick = () => cancelTour(tourID);
                     } else {
                         console.log("Query has more than one data")
                     }
@@ -69,9 +69,9 @@ function setTourData(tourID){
 
 let BookID = localStorage.getItem("tourID")
 
-function cancelTour() {
+function cancelTour(tourID) {
     currentUser.update({
-            booked: firebase.firestore.FieldValue.arrayRemove()
+            booked: firebase.firestore.FieldValue.arrayRemove(tourID)
     })
     .then(function () {
         console.log("Tour has been cancelled");
