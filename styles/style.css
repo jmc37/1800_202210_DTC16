@@ -140,6 +140,9 @@
    .row row-cols-auto{
      padding: 10px;
    }
+   .material-icons{
+    cursor: pointer;
+}
    /* Make content mobile friendly */
    @media only screen and (max-width:500px){
    #price, #activity{
@@ -167,6 +170,7 @@
       width: 31%;
     }
    }
+
 
    /* profile page */
    .d-flex.justify-content-end.mt-5{

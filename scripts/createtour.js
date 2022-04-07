@@ -12,7 +12,12 @@ function populateInfo() {
     tourImg = $("#tourImage").val()
     city_value = $('#city_name option:selected').val()
     tourNickname = $("#tour_nickname").val()
+    activity = $('#activity_name option:selected').val()
+    price = $('#tour_price option:selected').val()
+    actual_price = $('#tour_price option:selected').text()
     console.log(city_value)
+
+    alert("submitted!")
     //define a variable for the collection you want to create in Firestore to populate data
 
     var tourRef = db.collection("tours")
@@ -21,7 +26,10 @@ function populateInfo() {
         description: descript, //Tour description
         tourImage: tourImg, //Url to picture of tour
         city: city_value, //City added
-        tourID: city_value + tourNickname
+        tourID: city_value + tourNickname,
+        tourActivity: activity,
+        tourPrice: price,
+        tourActualPrice: actual_price
     });
 }
 

@@ -14,13 +14,14 @@ firebase.auth().onAuthStateChanged(user => {
 
 
 var searchkeyword = localStorage.getItem("searchkeyword");
+var searchfilter = localStorage.getItem("searchfilter");
 
 
 function populateCardsDynamically() {
     let hikeCardTemplate = document.getElementById("hikeCardTemplate");
     let hikeCardGroup = document.getElementById("hikeCardGroup");
 
-    db.collection("tours").where("city", "==", searchkeyword)
+    db.collection("tours").where("city", "==", searchkeyword).where("tourActivity", "==", searchfilter)
         .limit(10)
         .get()
         .then(allGuides => {
@@ -32,12 +33,12 @@ function populateCardsDynamically() {
                 testTourCard.querySelector('.card-img').src = pictures;
                 testTourCard.querySelector('.card-title').innerHTML = title;
                 //NEW LINE: update to display length, duration, last updated
-                testTourCard.querySelector('.card-length').innerHTML = "City: " + doc.data().city + " <br>";
-                    
-                testTourCard.querySelector('.card-text').innerHTML = "Description: " + doc.data().description + " <br>";
+                testTourCard.querySelector('.card-length').innerHTML =
+                    "City: " + doc.data().city + " <br>";
+                    "Details: " + doc.data().description + " <br>";
                 // testTourCard.querySelector('.card-text').innerHTML =
                 // testHikeCard.querySelector('.card-text').innerHTML = tourDescription;
-                // testTourCard.querySelector('.read-more').onclick = () => goToTour();
+                testTourCard.querySelector('.read-more').onclick = () => goToTour();
                 // testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);
                 // testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;
                 // //next 2 lines are new for demo#11
@@ -83,7 +84,6 @@ function setHikeData(id) {
 }
 
 
-
 function setSearchFilter() {
     var searchfilter = $(this).attr("id")
     console.log(searchfilter)
@@ -96,6 +96,7 @@ function setup() {
 }
 
 $(document).ready(setup);
+
 
 // function writeGuides() {
 //     //define a variable for the collection you want to create in Firestore to populate data

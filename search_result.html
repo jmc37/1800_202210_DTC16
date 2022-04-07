@@ -48,19 +48,20 @@
   
   <div style="float:left">
     <div id="price" class="dropdown">
-      <button class="dropbtn">Price</button>
+      <button class="dropbtn" id="price_button">Price</button>
+      
       <div class="dropdown-content">
-        <a href="#">$</a>
-        <a href="#">$$</a>
-        <a href="#">$$$</a>
+        <a class="filter_btn" id="$" href="search_result_price.html">$</a>
+        <a class="filter_btn" id="$$" href="search_result_price.html">$$</a>
+        <a class="filter_btn" id="$$$" href="search_result_price.html">$$$</a>
       </div>
     </div>
     <div id="activity" class="dropdown">
-      <button class="dropbtn">Activity</button>
+      <button class="dropbtn" id="activity_button">Activity</button>
       <div class="dropdown-content">
-        <a href="#">Food</a>
-        <a href="#">Sight Seeing</a>
-        <a href="#">Adventure</a>
+        <a class="filter_btn" id="Food" href="search_result_activity.html">Food</a>
+        <a class="filter_btn" id="Sight Seeing" href="search_result_activity.html">Sight Seeing</a>
+        <a class="filter_btn" id="Adventure" href="search_result_activity.html">Adventure</a>
       </div>
     </div>
   </div>
@@ -71,10 +72,11 @@
       <div class="card-body">
         <h5 class="card-title">placeholder</h5>
         <p class="card-length">placeholder</p>
-        <a href="review.html" class="link-primary">Write a review</a>
+        <!-- <a href="review.html" class="link-primary">Write a review</a> -->
         <br>
         <p class="card-text"></p>
         <a class="btn btn-primary read-more" style="float: right">Read more</a>
+        <!-- <a class="btn btn-primary book" style="float: right">Book</a> -->
         <i class="material-icons" style="cursor: pointer;">bookmark_border</i>
       </div>
     </div>

@@ -1,18 +1,19 @@
-let guideID = localStorage.getItem("guideID");
 
-db.collection("Guides").where("id", "==", guideID)
+var tourID = localStorage.getItem("tourID");
+console.log(tourID)
+db.collection("tours").where("tourTitle", "==", tourID)
             .get()
             .then(queryGuide => {
                 //see how many results you have got from the query
                 size = queryGuide.size;
                 // get the documents of query
-                Guides = queryGuide.docs;
+                Tours = queryGuide.docs;
 
                 // We want to have one document per hike, so if the the result of 
                 //the query is more than one, we can check it right now and clean the DB if needed.
                 if (size == 1) {
-                    var thisGuide = Guides[0].data();
-                    name = thisGuide.name;
+                    var thisTour = tours[0].data();
+                    name = thisTour.tourTitle;
                     document.getElementById("name").innerHTML = name;
                 } else {
                     console.log("Query has more than one data")
@@ -41,7 +42,7 @@ db.collection("Guides").where("id", "==", guideID)
                             .then(userDoc => {
                                 var userEmail = userDoc.data().email;
                                 db.collection("Reviews").add({
-                                    code: id,
+                                    tourID: tourID,
                                     userID: userID,
                                     title: Title,
                                     experience: experience,
@@ -50,7 +51,7 @@ db.collection("Guides").where("id", "==", guideID)
                                     rating: rating,
                                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
                                 }).then(()=>{
-                                    window.location.href = "thanks.html"; //new line added
+                                    alert('Thanks! your review has submitted'); //new line added
                                 })
                             })
                                
