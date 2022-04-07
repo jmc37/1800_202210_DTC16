@@ -33,15 +33,6 @@
 
 <body>
   <div id="search_bar_background">
-    <!-- settings -->
-    <div class="dropdown">
-      <button class="dropbtn1">User</button>
-      <div class="dropdown-content">
-        <a href="./booked.html">Tours</a>
-        <a href="./review.html">Review</a>
-      </div>
-    </div>
-    <br>
     <!-- Title / Welcome-->
     <h1 style="color: white;">Friend Trip</h1>
 
@@ -51,7 +42,7 @@
     <!--  -->
       <!-- country suggestions-->
 </div> 
-</div>
+<!-- Cards  -->
 <template id="TourCardTemplate">
   <div class="card">
     <img class="card-img">
@@ -69,7 +60,7 @@
 </template>
 
 
-<div class="container" style="padding-bottom: 150px; padding-top: 120px;">
+<div id="index_cards" class="container">
   <h1 style="text-align: center;">Some popular Tours</h1>
   <!-- Here is container for cards  -->
   <div class="container">
@@ -87,6 +78,9 @@
       </a>
       <a class="navbar-brand" href="Liked_tours.html">
         <i class="material-icons md-36">favorite</i>
+      </a>
+      <a class="navbar-brand" href="booked.html">
+        <i class="material-icons md-36">tour</i>
       </a>
       <a class="navbar-brand" href="message.html">
         <i class="material-icons md-36">info</i>

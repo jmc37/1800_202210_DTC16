@@ -33,17 +33,25 @@
 </head>
 
 <body>
-  <div id="search_bar_background_main">
-    <!-- Search Bar -->
-    <div id="search_guide">
-      <input type="text" id="search_bar_main" placeholder="Vancouver" name="search">
-      <input type="date" id="dates_start" placeholder="Dec11 " name="search">
-      <input type="date" id="date_end" placeholder="Dec 13" name="end">
-      <input type="text" id="travellers_main" placeholder="#travellers" name="search">
-      <button class="submit_btn_main" id="submit_btn"><i class="fa fa-search"></i></button>
+  <div id="search_bar_background">
+    <!-- settings -->
+    <div class="dropdown">
+      <button class="dropbtn1">User</button>
+      <div class="dropdown-content">
+        <a href="./booked.html">Tours</a>
+        <a href="./createtour.html">Create a tour</a>
+      </div>
     </div>
-  </div>
-  <div style="float: left;">
+    <br>
+    <!-- Title / Welcome-->
+    <h1 style="color: white;">Friend Trip</h1>
+
+    <!-- Search Bar -->
+    <input type="text" id="search_bar" placeholder="Where would you like to go?" name="search"> 
+    <button class="search_btn" id="submit_btn" onclick="window.location.href='search_result.html'"><i class="fa fa-search"></i></button>
+    <!--  -->
+      <!-- country suggestions-->
+</div> 
   <!-- Filter -->
   
   <div style="float:left">

@@ -59,7 +59,7 @@ function submitUserInfo() {
                     Guide: tourGuide
                 }).then(function () {
                     console.log("New user added to firestore");
-                    window.location.assign("mainpage.html");})
+                    window.location.assign("index.html");})
                 .then(() => {
                     console.log("Document successfully updated!");
                     document.getElementById('personalInfoFields').disabled = true;
