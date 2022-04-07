@@ -39,10 +39,10 @@
   <!-- Search Bar -->
 
   <div class="container">
-    <h1>My Booked Tours</h1>
+    <h1 style="text-align: center;">My Booked Tours</h1>
     <!-- Here is container for cards  -->
     <div class="container">
-        <div id="hikeCardGroup" class="row row-cols-auto">
+        <div id="hikeCardGroup" class="row-cols-auto">
 
         </div>
     </div>
@@ -50,7 +50,7 @@
 
 <!-- Templates for general use, not displayed -->
 <template id="CardTemplate">
-    <div class="card py-2 mx-2" style="width: 18rem;">
+    <div class="card py-2 mx-2" >
         <img class="card-image card-img-top" src=" ..." alt="...">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -63,24 +63,44 @@
     </div>
 </template>
 
-<!-- Bottom Navbar -->
-<nav class="navbar fixed-bottom navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">
-      <i class="material-icons md-36">home</i>
-    </a>
-    <a class="navbar-brand" href="Liked_tours.html">
-      <i class="material-icons md-36">favorite</i>
-    </a>
-    <a class="navbar-brand" href="booked.html">
-      <i class="material-icons md-36">tour</i>
-    </a>
-    <a class="navbar-brand" href="Faq.html">
-      <i class="material-icons md-36">info</i>
-    </a>
-    <a class="navbar-brand" href="profile.html">
-      <i class="material-icons md-36">account_circle</i></a>
-    </a>
+ <!-- Bottom Navbar -->
+ <nav class="navbar fixed-bottom navbar-light bg-light">
+  <div class="container" id="navbar_text">
+      <div style="text-indent:-2px;">
+          <a class="navbar-brand" href="index.html">
+              <i class="material-icons md-36">home</i>
+              <br>
+          </a>
+          Home
+      </div>
+      <div>
+          <a class="navbar-brand" href="Liked_tours.html">
+              <i class="material-icons md-36">favorite</i>
+          </a>
+          <br>
+          Favorite
+      </div>
+      <div style="text-indent: -1px;">
+          <a class="navbar-brand" href="booked.html">
+              <i class="material-icons md-36">tour</i>
+          </a>
+          <br>
+          Tour
+      </div>
+      <div style="text-indent: -4px;">
+          <a class="navbar-brand" href="Faq.html">
+              <i class="material-icons md-36">info</i>
+          </a>
+          <br>
+          Info
+      </div>
+      <div>
+          <a class="navbar-brand" href="profile.html">
+              <i class="material-icons md-36">account_circle</i></a>
+          </a>
+          <br>
+          Account
+      </div>
   </div>
 </nav>
 

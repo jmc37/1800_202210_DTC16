@@ -47,34 +47,34 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
-    <div class="container-fluid bg-white text-dark p-5">
-        <div class="container bg-white p-5" >
+    <div class="container-fluid bg-white text-dark p-2">
+        <div class="container bg-white p-5">
             <h1 class="display-4">Gutentag, <span id="name-goes-here"></span></h1>
             <hr>
             <form action="createtour.html">
                 <input type="submit" value="Create a Tour" />
             </form>
-                    
+
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="profile_form">
         <h1>User Profile </h1>
         <form>
             <fieldset class="mb-3" id="personalInfoFields" disabled>
                 <div class="form-group">
-                    <label >Name</label>
+                    <label>Name</label>
                     <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
                 </div>
                 <div class="form-group">
-                    <label >Address</label>
+                    <label>Address</label>
                     <input type="text" id="addressInput" class="form-control" placeholder="Enter your address">
                 </div>
                 <div class="form-group">
-                    <label >email</label>
+                    <label>email</label>
                     <input type="text" id="emailInput" class="form-control" placeholder="Enter your email">
                 </div>
                 <div class="form-group">
-                    <label >Phone Number</label>
+                    <label>Phone Number</label>
                     <input type="text" id="phoneInput" class="form-control" placeholder="Enter your Number">
                 </div>
             </fieldset>
@@ -84,31 +84,51 @@
                 <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
             </div>
         </form>
-</div>
-
-
-
-<!-- Bottom Navbar -->
-<nav class="navbar fixed-bottom navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <i class="material-icons md-36">home</i>
-      </a>
-      <a class="navbar-brand" href="Liked_tours.html">
-        <i class="material-icons md-36">favorite</i>
-      </a>
-      <a class="navbar-brand" href="booked.html">
-        <i class="material-icons md-36">tour</i>
-      </a>
-      <a class="navbar-brand" href="Faq.html">
-        <i class="material-icons md-36">info</i>
-      </a>
-      <a class="navbar-brand" href="profile.html">
-        <i class="material-icons md-36">account_circle</i></a>
-      </a>
     </div>
-  </nav>
-  
+
+
+
+    <!-- Bottom Navbar -->
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+        <div class="container" id="navbar_text">
+            <div style="text-indent:-2px;">
+                <a class="navbar-brand" href="index.html">
+                    <i class="material-icons md-36">home</i>
+                    <br>
+                </a>
+                Home
+            </div>
+            <div>
+                <a class="navbar-brand" href="Liked_tours.html">
+                    <i class="material-icons md-36">favorite</i>
+                </a>
+                <br>
+                Favorite
+            </div>
+            <div style="text-indent: -1px;">
+                <a class="navbar-brand" href="booked.html">
+                    <i class="material-icons md-36">tour</i>
+                </a>
+                <br>
+                Tour
+            </div>
+            <div style="text-indent: -4px;">
+                <a class="navbar-brand" href="Faq.html">
+                    <i class="material-icons md-36">info</i>
+                </a>
+                <br>
+                Info
+            </div>
+            <div>
+                <a class="navbar-brand" href="profile.html">
+                    <i class="material-icons md-36">account_circle</i></a>
+                </a>
+                <br>
+                Account
+            </div>
+        </div>
+    </nav>
+
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
