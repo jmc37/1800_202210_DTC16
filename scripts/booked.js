@@ -3,9 +3,9 @@ firebase.auth().onAuthStateChanged(user => {
     if (user) {
         currentUser = db.collection("users").doc(user.uid); //global
         currentUser.get().then(userDoc => {
-        //get the user name
-        var user_Name = userDoc.data().name;
-        console.log(user_Name);
+            //get the user name
+            var user_Name = userDoc.data().name;
+            console.log(user_Name);
         })
         // the following functions are always called when someone is logged in
 
@@ -20,7 +20,7 @@ firebase.auth().onAuthStateChanged(user => {
         getBookmarks(user)
     } else {
         console.log("No user is signed in");
-        location.href="login.html"
+        location.href = "login.html"
     }
 });
 
@@ -36,12 +36,12 @@ function getBookmarks(user) {
                 db.collection("tours").where("tourID", "==", thisTourID).get().then(snap => {
                     size = snap.size;
                     queryData = snap.docs;
-                    
+
                     if (size == 1) {
                         var doc = queryData[0].data();
-                        var title = doc.tourTitle; //gets the name field
-                        var tourID = doc.tourID; //gets the unique ID field
-                        var tourCity = doc.city; //gets the length field
+                        var title = doc.tourTitle;
+                        var tourID = doc.tourID;
+                        var tourCity = doc.city;
                         var tourDescription = doc.description;
                         let newCard = CardTemplate.content.cloneNode(true);
                         newCard.querySelector('.card-title').innerHTML = title;
@@ -62,7 +62,7 @@ function getBookmarks(user) {
         })
 }
 
-function setTourData(tourID){
+function setTourData(tourID) {
     console.log(tourID)
     localStorage.setItem('tourID', tourID);
 }
@@ -72,29 +72,9 @@ let BookID = localStorage.getItem("tourID")
 function cancelTour(tourID) {
     currentUser.update({
             booked: firebase.firestore.FieldValue.arrayRemove(tourID)
-    })
-    .then(function () {
-        console.log("Tour has been cancelled");
-        // var iconID = 'save-' + hikeID;
-        //console.log(iconID);
-        document.getElementById('cancel_btn').innerText = 'Cancelled';
-    });
+        })
+        .then(function () {
+            console.log("Tour has been cancelled");
+            document.getElementById('cancel_btn').innerText = 'Cancelled';
+        });
 }
-// function saveBookmark(tourID) {
-//     currentUser.set({
-//             bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)
-//         }, {
-//             merge: true
-//         })
-//         .then(function () {
-//             console.log("bookmark has been saved for: " + currentUser);
-//             var iconID = 'save-' + tourID;
-//             //console.log(iconID);
-//             document.getElementById(iconID).innerText = 'bookmark';
-//         });
-
-// function setup() {
-//     $('#review_btn').click(setTourID);
-// }
-
-// $(document).ready(setup);
