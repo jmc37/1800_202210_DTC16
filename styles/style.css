@@ -62,6 +62,10 @@
       border-radius: 50px;
       background-color: red;
   }
+  #logo{
+    width: 250px;
+  height: 250px;
+padding: 20px;}
   
   /* mainpage */
   #search_bar_background_main{
