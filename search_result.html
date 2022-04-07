@@ -34,30 +34,20 @@
 
 <body>
   <div id="search_bar_background">
-    <!-- settings -->
-    <div class="dropdown">
-      <button class="dropbtn1">User</button>
-      <div class="dropdown-content">
-        <a href="./booked.html">Tours</a>
-        <a href="./createtour.html">Create a tour</a>
-      </div>
-    </div>
-    <br>
+
     <!-- Title / Welcome-->
     <h1 style="color: white;">Friend Trip</h1>
 
     <!-- Search Bar -->
-    <input type="text" id="search_bar" placeholder="Where would you like to go?" name="search"> 
-    <button class="search_btn" id="submit_btn" onclick="window.location.href='search_result.html'"><i class="fa fa-search"></i></button>
-    <!--  -->
-      <!-- country suggestions-->
-</div> 
+    <input type="text" id="search_bar" placeholder="Where would you like to go?" name="search">
+    <button class="search_btn" id="submit_btn" onclick="window.location.href='search_result.html'"><i
+        class="fa fa-search"></i></button>
+  </div>
   <!-- Filter -->
-  
   <div style="float:left">
     <div id="price" class="dropdown">
       <button class="dropbtn" id="price_button">Price</button>
-      
+
       <div class="dropdown-content">
         <a class="filter_btn" id="$" href="search_result_price.html">$</a>
         <a class="filter_btn" id="$$" href="search_result_price.html">$$</a>
@@ -82,7 +72,8 @@
       </div>
     </div>
   </div>
-</div>
+  </div>
+  <!-- Tour Results-->
   <template id="TourCardTemplate">
     <div class="card">
       <img class="card-img">
@@ -104,7 +95,7 @@
     <h1 style="text-align: center;">Some popular Tours</h1>
     <!-- Here is container for cards  -->
     <div class="container">
-      <div id="TourCardGroup" >
+      <div id="TourCardGroup">
       </div>
     </div>
   </div>
@@ -114,7 +105,49 @@
 
   <nav id="navbarPlaceholder"></nav>
 
-
+<<<<<<< HEAD
+=======
+   <!-- Bottom Navbar -->
+   <nav class="navbar fixed-bottom navbar-light bg-light">
+    <div class="container" id="navbar_text">
+        <div style="text-indent:-2px;">
+            <a class="navbar-brand" href="index.html">
+                <i class="material-icons md-36">home</i>
+                <br>
+            </a>
+            Home
+        </div>
+        <div>
+            <a class="navbar-brand" href="Liked_tours.html">
+                <i class="material-icons md-36">favorite</i>
+            </a>
+            <br>
+            Favorite
+        </div>
+        <div style="text-indent: -1px;">
+            <a class="navbar-brand" href="booked.html">
+                <i class="material-icons md-36">tour</i>
+            </a>
+            <br>
+            Tour
+        </div>
+        <div style="text-indent: -4px;">
+            <a class="navbar-brand" href="Faq.html">
+                <i class="material-icons md-36">info</i>
+            </a>
+            <br>
+            Info
+        </div>
+        <div>
+            <a class="navbar-brand" href="profile.html">
+                <i class="material-icons md-36">account_circle</i></a>
+            </a>
+            <br>
+            Account
+        </div>
+    </div>
+</nav>
+>>>>>>> 400e0ea555a3c4d414091b381718d4546c04f067
 
 
 
