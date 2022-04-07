@@ -33,10 +33,6 @@
   display: block;
 }
 
-#index_cards{
-  padding-bottom: 100px;
-  padding-top: 10px;
-}
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
@@ -62,7 +58,6 @@
       border-radius: 50px;
       background-color: red;
   }
-  
   /* mainpage */
   #search_bar_background_main{
       text-align: center;
@@ -156,12 +151,9 @@
   }
    
    @media only screen and (max-width:500px){
-      #search_guide, #Guides-go-here{
+     #search_bar, #search_guide, #Guides-go-here{
        width: 100%;
      }
-   }
-   #search_bar{
-     width: 70%;
    }
 
    @media only screen and (max-width:1000px){

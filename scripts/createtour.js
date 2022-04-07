@@ -1,15 +1,19 @@
+// var tourTitle = null
+// var description = null
+// var image = null
+// var city_value = null
+
+
 function populateInfo() {
     console.log('works')
     //go to the correct user document by referencing to the user uid
     tourT = $("#inputTour").val()
     descript = $("#description").val()
     tourImg = $("#tourImage").val()
-    spoken_language = $("#spoken_language").val()
     city_value = $('#city_name option:selected').val()
     tourNickname = $("#tour_nickname").val()
     activity = $('#activity_name option:selected').val()
     price = $('#tour_price option:selected').val()
-    actual_price = $('#tour_price option:selected').text()
     console.log(city_value)
 
     alert("submitted!")
@@ -21,11 +25,9 @@ function populateInfo() {
         description: descript, //Tour description
         tourImage: tourImg, //Url to picture of tour
         city: city_value, //City added
-        language: spoken_language,
         tourID: city_value + tourNickname,
         tourActivity: activity,
-        tourPrice: price,
-        tourActualPrice: actual_price
+        tourPrice: price
     });
 }
 

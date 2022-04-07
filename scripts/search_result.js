@@ -15,6 +15,30 @@ firebase.auth().onAuthStateChanged(user => {
 
 var searchkeyword = localStorage.getItem("searchkeyword");
 
+// function writeGuides() {
+//     //define a variable for the collection you want to create in Firestore to populate data
+//     var GuideRef = db.collection("Tour");
+
+//     GuideRef.add({
+//         name: "Kyle G.",
+//         city: "Burnaby,BC",
+//         languages: "Tagalog,English",
+//         Bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget maximus magna, vel dictum purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+
+//     });
+//     GuideRef.add({
+//         name: "Sanghoon L.",
+//         city: "Vancouver,BC",
+//         languages: "Korean,English",
+//         Bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget maximus magna, vel dictum purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+//     });
+//     GuideRef.add({
+//         name: "Luca H.",
+//         city: "Whistler,BC",
+//         languages: "Vietnamese,English",
+//         Bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget maximus magna, vel dictum purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+//     });
+// };
 
 function populateCardsDynamically() {
     let hikeCardTemplate = document.getElementById("hikeCardTemplate");
@@ -32,12 +56,12 @@ function populateCardsDynamically() {
                 testTourCard.querySelector('.card-img').src = pictures;
                 testTourCard.querySelector('.card-title').innerHTML = title;
                 //NEW LINE: update to display length, duration, last updated
-                testTourCard.querySelector('.card-length').innerHTML = "City: " + doc.data().city + " <br>";
-                    
-                testTourCard.querySelector('.card-text').innerHTML = "Description: " + doc.data().description + " <br>";
+                testTourCard.querySelector('.card-length').innerHTML =
+                    "City: " + doc.data().city + " <br>";
+                    "Details: " + doc.data().description + " <br>";
                 // testTourCard.querySelector('.card-text').innerHTML =
                 // testHikeCard.querySelector('.card-text').innerHTML = tourDescription;
-                // testTourCard.querySelector('.read-more').onclick = () => goToTour();
+                testTourCard.querySelector('.read-more').onclick = () => goToTour();
                 // testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);
                 // testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;
                 // //next 2 lines are new for demo#11
@@ -81,30 +105,3 @@ function saveBookmark(tourID) {
 function setHikeData(id) {
     localStorage.setItem('tourID', id);
 }
-
-function setSearchBarCityName(){
-    var searchkeyword = $('#search_bar').val()
-    console.log(searchkeyword)
-    localStorage.setItem ('searchkeyword', searchkeyword);
-}
-
-
-function setup() {
-    $('.search_btn').click(setSearchBarCityName);
-}
-
-$(document).ready(setup);
-
-function setSearchFilter() {
-    var searchfilter = $(this).attr("id")
-    console.log(searchfilter)
-    localStorage.setItem ('searchfilter', searchfilter);
-}
-
-
-function setup() {
-    $('.filter_btn').click(setSearchFilter);
-}
-
-$(document).ready(setup);
-

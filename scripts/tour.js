@@ -39,8 +39,6 @@ function displaytour() {
             var tourcity = thisTour.city;
             var tour_description =thisTour.description;
             var tour_img = thisTour.tourImage;
-            var tour_price = thisTour.tourActualPrice
-            var tour_activity = thisTour.tourActivity
             // var tourname = thisTour.name;
             // var tourbio = thisTour.Bio;
             // var tourlanguage = thisTour.languages;
@@ -52,8 +50,6 @@ function displaytour() {
             document.getElementById('tour_title').innerHTML = tourtitle;
             document.getElementById('city').innerHTML = tourcity;
             document.getElementById('description').innerHTML = tour_description;   
-            document.getElementById('price').innerHTML = tour_price;   
-            document.getElementById('activity').innerHTML = tour_activity;   
             document.getElementById('tour_img_').setAttribute("src", tour_img)
             document.getElementById('book_btn').onclick = () => savetour(tourID);
             // document.getElementById('bio').innerHTML = tourbio;
@@ -67,75 +63,6 @@ function displaytour() {
 
 
 displaytour()
-
-
-function displayreview() {
-
-    db.collection("Reviews").where("tourID", "==", id)
-    .get()
-        .then(doc => {            
-            console.log(doc)
-
-            TourDocs = doc.docs;
-            thisTour = TourDocs[0].data();
-            //get the data fields of only one guide who is result of query
-            console.log(thisTour);
-            var reviewRating = thisTour.rating;
-            var reviewFun = thisTour.fun;
-            var reviewTitle =thisTour.title;
-            var reviewExperience = thisTour.experience;
-            var tourID = thisTour.tourID;
-
-
-
-            document.getElementById('rating').innerHTML = reviewRating;
-            document.getElementById('fun').innerHTML = reviewFun;
-            document.getElementById('review_title').innerHTML = reviewTitle;
-            document.getElementById('experience').innerHTML = reviewExperience;   
-        })
-}
-
-
-displayreview()
-
-
-
-// function displayreviewDynamically() {
-
-//     db.collection("Reviews").where("tourID", "==", id)
-//     .limit(4)
-//     .get()
-//         .then(allReviews => {            
-//             // console.log(doc)
-//             allReviews.forEach(doc => {
-
-//             TourDocs = doc;
-//             thisTour = TourDocs.data();
-//             //get the data fields of only one guide who is result of query
-//             console.log(thisTour);
-//             var reviewRating = thisTour.rating;
-//             var reviewFun = thisTour.fun;
-//             var reviewTitle =thisTour.title;
-//             var reviewExperience = thisTour.experience;
-//             var tourID = thisTour.tourID;
-
-
-
-//             document.getElementById('rating').innerHTML = reviewRating;
-//             document.getElementById('fun').innerHTML = reviewFun;
-//             document.getElementById('review_title').innerHTML = reviewTitle;
-//             document.getElementById('experience').innerHTML = reviewExperience;   
-
-//             reviewGroup.appendChild(document);
-//         })
-// })}
-
-// displayreviewDynamically()
-
-
-
-
-
 
 
 function savetour(tourID) {
