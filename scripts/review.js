@@ -1,5 +1,6 @@
-let tourID = localStorage.getItem("tourID");
 
+var tourID = localStorage.getItem("tourID");
+console.log(tourID)
 db.collection("tours").where("tourTitle", "==", tourID)
             .get()
             .then(queryGuide => {
@@ -41,7 +42,7 @@ db.collection("tours").where("tourTitle", "==", tourID)
                             .then(userDoc => {
                                 var userEmail = userDoc.data().email;
                                 db.collection("Reviews").add({
-                                    code: id,
+                                    tourID: tourID,
                                     userID: userID,
                                     title: Title,
                                     experience: experience,
@@ -50,7 +51,7 @@ db.collection("tours").where("tourTitle", "==", tourID)
                                     rating: rating,
                                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
                                 }).then(()=>{
-                                    window.location.href = "thanks.html"; //new line added
+                                    alert('Thanks! your review has submitted'); //new line added
                                 })
                             })
                                

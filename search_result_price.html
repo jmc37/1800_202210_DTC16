@@ -33,34 +33,52 @@
 </head>
 
 <body>
-  <div id="search_bar_background_main">
-    <!-- Search Bar -->
-    <div id="search_guide">
-      <input type="text" id="search_bar_main" placeholder="Vancouver" name="search">
-      <input type="date" id="dates_start" placeholder="Dec11 " name="search">
-      <input type="date" id="date_end" placeholder="Dec 13" name="end">
-      <input type="text" id="travellers_main" placeholder="#travellers" name="search">
-      <button class="submit_btn_main" id="submit_btn"><i class="fa fa-search"></i></button>
+  <div id="search_bar_background">
+    <!-- settings -->
+    <div class="dropdown">
+      <button class="dropbtn1">User</button>
+      <div class="dropdown-content">
+        <a href="./booked.html">Tours</a>
+        <a href="./createtour.html">Review</a>
+      </div>
     </div>
-  </div>
-  <div style="float: left;">
+    <br>
+    <!-- Title / Welcome-->
+    <h1 style="color: white;">Friend Trip</h1>
+
+    <!-- Search Bar -->
+    <input type="text" id="search_bar" placeholder="Where would you like to go?" name="search"> 
+    <button class="search_btn" id="submit_btn" onclick="window.location.href='search_result.html'"><i class="fa fa-search"></i></button>
+    <!--  -->
+      <!-- country suggestions-->
+</div> 
   <!-- Filter -->
   
   <div style="float:left">
     <div id="price" class="dropdown">
-      <button class="dropbtn">Price</button>
+      <button class="dropbtn" id="price_button">Price</button>
+      
       <div class="dropdown-content">
-        <a href="#">$</a>
-        <a href="#">$$</a>
-        <a href="#">$$$</a>
+        <a class="filter_btn" id="$" href="search_result_price.html">$</a>
+        <a class="filter_btn" id="$$" href="search_result_price.html">$$</a>
+        <a class="filter_btn" id="$$$" href="search_result_price.html">$$$</a>
       </div>
     </div>
     <div id="activity" class="dropdown">
-      <button class="dropbtn">Activity</button>
+      <button class="dropbtn" id="activity_button">Activity</button>
       <div class="dropdown-content">
-        <a href="#">Food</a>
-        <a href="#">Sight Seeing</a>
-        <a href="#">Adventure</a>
+        <a class="filter_btn" id="Food" href="search_result_activity.html">Food</a>
+        <a class="filter_btn" id="Sight Seeing" href="search_result_activity.html">Sight Seeing</a>
+        <a class="filter_btn" id="Adventure" href="search_result_activity.html">Adventure</a>
+      </div>
+    </div>
+    <div id="language" class="dropdown">
+      <button class="dropbtn" id="language_button">Language</button>
+      <div class="dropdown-content">
+        <a class="filter_btn" id="English" href="search_result_language.html">English</a>
+        <a class="filter_btn" id="French" href="search_result_language.html">French</a>
+        <a class="filter_btn" id="Spanish" href="search_result_language.html">Spanish</a>
+        <a class="filter_btn" id="Chinese" href="search_result_language.html">Chinese</a>
       </div>
     </div>
   </div>
@@ -71,18 +89,19 @@
       <div class="card-body">
         <h5 class="card-title">placeholder</h5>
         <p class="card-length">placeholder</p>
-        <a href="review.html" class="link-primary">Write a review</a>
+        <!-- <a href="review.html" class="link-primary">Write a review</a> -->
         <br>
         <p class="card-text"></p>
         <a class="btn btn-primary read-more" style="float: right">Read more</a>
-        <i class="material-icons">bookmark_border</i>
+        <!-- <a class="btn btn-primary book" style="float: right">Book</a> -->
+        <i class="material-icons" style="cursor: pointer;">bookmark_border</i>
       </div>
     </div>
   </template>
 
 
   <div class="container" style="padding-bottom: 150px; padding-top: 120px;">
-    <h1 style="text-align: center;">Tours</h1>
+    <h1 style="text-align: center;">Some popular Tours</h1>
     <!-- Here is container for cards  -->
     <div class="container">
       <div id="TourCardGroup" >
@@ -96,23 +115,27 @@
 
 
 
-  <!-- Bottom Navbar -->
-  <nav class="navbar fixed-bottom navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <i class="material-icons md-36">search</i>
-      </a>
-      <a class="navbar-brand" href="Liked_tours.html">
-        <i class="material-icons md-36">favorite_border</i>
-      </a>
-      <a class="navbar-brand" href="createtour.html.html">
-        <i class="material-icons md-36">sms</i>
-      </a>
-      <a class="navbar-brand" href="profile.html">
-        <i class="material-icons md-36">account_circle</i></a>
-      </a>
-    </div>
-  </nav>
+<!-- Bottom Navbar -->
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <i class="material-icons md-36">home</i>
+    </a>
+    <a class="navbar-brand" href="Liked_tours.html">
+      <i class="material-icons md-36">favorite</i>
+    </a>
+    <a class="navbar-brand" href="booked.html">
+      <i class="material-icons md-36">tour</i>
+    </a>
+    <a class="navbar-brand" href="Faq.html">
+      <i class="material-icons md-36">info</i>
+    </a>
+    <a class="navbar-brand" href="profile.html">
+      <i class="material-icons md-36">account_circle</i></a>
+    </a>
+  </div>
+</nav>
+
 
 
 
@@ -136,9 +159,9 @@
   <script src="./scripts/FirebaseAPI_TEAM16.js"></script>
   <!-- <script src="./scripts/authentication.js"></script> -->
   <!-- only relates to login.html don't copy it to other html-->
-  <script src="./scripts/mainpage.js"></script>
-  <scrpt src="./scripts/search_result.js"></scrpt>
-  <script src="./scripts/profile.js"></script>
+  <script src="./scripts/search_result_price.js"></script>
+
+
 
 
 
