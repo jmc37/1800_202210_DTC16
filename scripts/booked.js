@@ -1,3 +1,5 @@
+var tourID=null
+
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         getBookmarks(user)
@@ -48,6 +50,7 @@ function setTourData(tourID){
     console.log(tourID)
     localStorage.setItem('tourID', tourID);
 }
+
 
 
 // function setup() {
