@@ -21,7 +21,6 @@ var title = params.searchParams.get("title");
 
 
 function displaytour() {
-
     db.collection("tours").where("tourID", "==", id)
         .get()
         .then(doc => {

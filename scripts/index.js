@@ -27,7 +27,7 @@ function populateCardsDynamically() {
                 testTourCard.querySelector('.card-text').innerHTML = "Description: " + doc.data().description + " <br>";
                 testTourCard.querySelector('i').id = 'save-' + tourID;
                 testTourCard.querySelector('i').onclick = () => saveBookmark(tourID);
-                testTourCard.querySelector('.read-more').href = "tour.html?title=" + title + "&id=" + tourID;
+                testTourCard.querySelector('.read-more').href = "/pages/tour.html?title=" + title + "&id=" + tourID;
                 TourCardGroup.appendChild(testTourCard);
             })
 

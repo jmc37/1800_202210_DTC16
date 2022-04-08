@@ -33,17 +33,18 @@ function getBookmarks(user) {
 
                     if (size == 1) {
                         var doc = queryData[0].data();
-                        var tourName = doc.tourTitle;
+                        var title = doc.tourTitle;
                         var tourCity = doc.city
                         var pictures = doc.tourImage;
-                        var ID = doc.tourID;
+                        var tourID = doc.tourID;
                         let newCard = CardTemplate.content.cloneNode(true);
-                        newCard.querySelector('.card-title').innerHTML = tourName
+                        newCard.querySelector('.card-title').innerHTML = title
                         newCard.querySelector('.card-length').innerHTML = tourCity
                         // newCard.querySelector('a').onclick = () => setHikeData(ID);
                         newCard.querySelector('img').src = pictures;
-                        tourCardGroup.appendChild(newCard)
                         newCard.querySelector('.read-more').href = "tour.html?title=" + title + "&id=" + tourID;
+                        tourCardGroup.appendChild(newCard)
+                        
                     } else {
                         console.log("Query has more than one data")
                     }
