@@ -159,7 +159,18 @@
 }
 /* Profile */
 #profile_form{
-  padding-bottom: 50px;
+  padding-bottom: 10px;
+}
+#emergency_button{
+  background-color: red; 
+  font-style: normal;  
+  border-radius: 30px; 
+  font-size: 20px;
+  margin-left: 40px;
+}
+#emergency_text{
+  text-decoration: none;
+  padding-bottom: 120px;
 }
 /* Navbar */
 #navbar_text{
@@ -197,6 +208,9 @@
     }
    }
 
+<<<<<<< HEAD
+   @media only screen and (max-width:3000px){
+=======
    @media only screen{
     .col-md-4, #booked_tours{
       width: 100%;
@@ -206,6 +220,7 @@
    }
 
    /* @media only screen and (max-width:3000px){
+>>>>>>> b99b9fde407ff5240bb0ca60f7e14e6b204ce8c7
     #logo{
       width: 204px;
       height: 204px;
@@ -217,7 +232,7 @@
       width: 147px;
       height: 147px;
     }
-   } */
+   }
 
 
    /* profile page */
