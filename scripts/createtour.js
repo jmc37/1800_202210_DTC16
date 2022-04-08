@@ -1,6 +1,5 @@
 function populateInfo() {
     console.log('works')
-    //go to the correct user document by referencing to the user uid
     tourT = $("#inputTour").val()
     descript = $("#description").val()
     tourImg = $("#tourImage").val()
@@ -13,14 +12,14 @@ function populateInfo() {
     console.log(city_value)
 
     alert("submitted!")
-    //define a variable for the collection you want to create in Firestore to populate data
+
 
     var tourRef = db.collection("tours")
     tourRef.add({
-        tourTitle: tourT, //Title of tour
-        description: descript, //Tour description
-        tourImage: tourImg, //Url to picture of tour
-        city: city_value, //City added
+        tourTitle: tourT,
+        description: descript,
+        tourImage: tourImg,
+        city: city_value,
         language: spoken_language,
         tourID: city_value + tourNickname,
         tourActivity: activity,
