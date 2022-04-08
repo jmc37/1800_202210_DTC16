@@ -45,8 +45,8 @@ function getBookmarks(user) {
                         var tourDescription = doc.description;
                         let newCard = CardTemplate.content.cloneNode(true);
                         newCard.querySelector('.card-title').innerHTML = title;
-                        newCard.querySelector('.card-length').innerHTML = tourCity;
-                        newCard.querySelector('.card-text').innerHTML = tourDescription;
+                        newCard.querySelector('.card-length').innerHTML = "City: " + tourCity;
+                        newCard.querySelector('.card-text').innerHTML = "Description: " + tourDescription;
                         newCard.querySelector('a').onclick = () => setTourData(tourID);
                         newCard.querySelector('.get_detail').href = "tour.html?title=" + title + "&id=" + tourID;
                         newCard.querySelector('img').src = doc.tourImage;
