@@ -26,13 +26,27 @@ function populateCardsDynamically() {
                 var title = doc.data().tourTitle;
                 var tourID = doc.data().tourID;
                 var pictures = doc.data().tourImage;
+                var city = doc.data().city
+                var price = doc.data().tourActualPrice;
+                var language = doc.data().language;
+                var activity = doc.data().tourActivity;
+                var description = doc.data().description
                 let testTourCard = TourCardTemplate.content.cloneNode(true);
                 testTourCard.querySelector('.card-img').src = pictures;
                 testTourCard.querySelector('.card-title').innerHTML = title;
+<<<<<<< HEAD
                 testTourCard.querySelector('.card-length').innerHTML =
                 "City: " + doc.data().city + " <br>";
                 "Details: " + doc.data().description + " <br>";
                 testTourCard.querySelector('.read-more').onclick = () => goToTour();
+=======
+                testTourCard.querySelector('.card-length').innerHTML = 
+                "City: " + city + " <br>" +
+                "Price: " + price + " <br>" +
+                "Activity: " + activity + " <br>" +
+                "Language: " + language + " <br>" +
+                "Details: " + description + " <br>";
+>>>>>>> 392d8a977018f7d2fdb8981334f4c3350437e416
                 testTourCard.querySelector('i').id = 'save-' + tourID;
                 testTourCard.querySelector('i').onclick = () => saveBookmark(tourID);
                 testTourCard.querySelector('.read-more').href = "tour.html?title=" + title + "&id=" + tourID;
