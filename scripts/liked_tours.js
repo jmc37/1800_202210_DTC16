@@ -34,7 +34,6 @@ function getBookmarks(user) {
                     if (size == 1) {
                         var doc = queryData[0].data();
                         var title = doc.tourTitle;
-                        var tourCity = doc.city
                         var pictures = doc.tourImage;
                         var tourID = doc.tourID;
                         let newCard = CardTemplate.content.cloneNode(true);

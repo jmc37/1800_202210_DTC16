@@ -1,9 +1,7 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Inspiration&display=swap" rel="stylesheet">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,12 +34,11 @@
 <body>
   <div id="search_bar_background">
     <!-- Title / Welcome-->
-    <span><img src="images/logo.png" id="logo"></span>
     <h1 style="color: white;">Friend Trip</h1>
-    
+
     <!-- Search Bar -->
     <input type="text" id="search_bar" placeholder="Where would you like to go?" name="search">
-    <button class="search_btn" id="submit_btn" onclick="window.location.href='/pages/search_result.html'"><i
+    <button class="search_btn" id="submit_btn" onclick="window.location.href='search_result.html'"><i
         class="fa fa-search"></i></button>
     <!--  -->
     <!-- country suggestions-->
@@ -53,7 +50,7 @@
       <div class="card-body">
         <h5 class="card-title">placeholder</h5>
         <p class="card-length">placeholder</p>
-        <p class="card-text">placeholder</p>
+        <!-- <a href="review.html" class="link-primary">Write a review</a> -->
         <br>
 
         <a class="btn btn-primary read-more" style="float: right">Read more</a>
@@ -66,14 +63,53 @@
   <div id="index_cards" class="container">
     <h1 style="text-align: center;">Some popular Tours</h1>
     <!-- Here is container for cards  -->
-    <div class="container" id="index_cards">
+    <div class="container">
       <div id="TourCardGroup">
       </div>
     </div>
   </div>
 
 
-  <nav id="navbarPlaceholder"></nav>
+  <!-- Bottom Navbar -->
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+    <div class="container" id="navbar_text">
+      <div style="text-indent:-2px;">
+        <a class="navbar-brand" href="index.html">
+          <i class="material-icons md-36">home</i>
+          <br>
+        </a>
+        Home
+      </div>
+      <div>
+        <a class="navbar-brand" href="./Pages/Liked_tours.html">
+          <i class="material-icons md-36">favorite</i>
+        </a>
+        <br>
+        Favorite
+      </div>
+      <div style="text-indent: -1px;">
+        <a class="navbar-brand" href="./Pages/booked.html">
+          <i class="material-icons md-36">tour</i>
+        </a>
+        <br>
+        Tour
+      </div>
+      <div style="text-indent: -4px;">
+        <a class="navbar-brand" href="./Pages/Faq.html">
+          <i class="material-icons md-36">info</i>
+        </a>
+        <br>
+        Info
+      </div>
+      <div>
+        <a class="navbar-brand" href="./Pages/login.html">
+          <i class="material-icons md-36">account_circle</i></a>
+        </a>
+        <br>
+        Account
+      </div>
+    </div>
+  </nav>
 
 
 
@@ -96,7 +132,6 @@
 
   <script src="./scripts/FirebaseAPI_TEAM16.js"></script>
   <script src="./scripts/index.js"></script>
-  <script src="./scripts/skeleton.js"></script>
 
 
   </script>

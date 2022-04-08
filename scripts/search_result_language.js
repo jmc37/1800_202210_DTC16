@@ -30,7 +30,7 @@ function populateCardsDynamically() {
                 testTourCard.querySelector('.card-img').src = pictures;
                 testTourCard.querySelector('.card-title').innerHTML = title;
                 testTourCard.querySelector('.card-length').innerHTML =
-                    "City: " + doc.data().city + " <br>";
+                "City: " + doc.data().city + " <br>";
                 "Details: " + doc.data().description + " <br>";
                 testTourCard.querySelector('.read-more').onclick = () => goToTour();
                 testTourCard.querySelector('i').id = 'save-' + tourID;
