@@ -1,17 +1,16 @@
-## My Web Application (Add your Title here)
+## Friendtrip
 
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
+* [Resources](#resource)
+* [Acknowledgements](#acknowledgements)
 
 ## General Info
-This browser based web application to ...
-* Hi my name is Joseph. I'm excited about this project because I love learning new things
-
-* Hi my name is Jack. I'm excited about this project because I love working in groups 
+Friendtour is an app that connects tourists to local guides that offers a tour from a locals eyes with a more
+personal experience.
 
 
-* Hi my name is Jesper!! I'm excited about this project because I love working in groups
 	
 ## Technologies
 Technologies used for this project:
@@ -20,6 +19,7 @@ Technologies used for this project:
 * Bootstrap 
 * Jquery
 * Firebase and Firestore
+* Netlify
 	
 ## Content
 Content of the project folder:
@@ -59,6 +59,7 @@ It has the following subfolders and files:
 
 ├── scripts                         # Folder for scripts
     /authentication.js              # js file, it enables firebase authentication
+    /firebaseAPI_TEAM16.js          # firebase API
     /booked.js                      # js file for booked.html
     /createtour.js                  # js file for createtour.html
     /guide.js                       # js file for guide.html
@@ -87,3 +88,14 @@ Firebase hosting files:
 ├── firestore.indexes.json          # Firebase hosting files
 └── firestore.rules                 # Firebase hosting files
 ```
+
+## Resource
+Technologies used for this project:
+Logo made by Jack Berena
+tour images from unsplash(Free to use)
+Icons by Google fonts(Free to use)
+
+## Acknowledgement
+* Google Fonts
+* jQuery
+* Bootstrap
