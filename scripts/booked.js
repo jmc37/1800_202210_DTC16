@@ -50,7 +50,7 @@ function getBookmarks(user) {
                         newCard.querySelector('a').onclick = () => setTourData(tourID);
                         newCard.querySelector('.get_detail').href = "tour.html?title=" + title + "&id=" + tourID;
                         newCard.querySelector('img').src = doc.tourImage;
-                        hikeCardGroup.appendChild(newCard);
+                        tourCardGroup.appendChild(newCard);
                         document.getElementById('cancel_btn').onclick = () => cancelTour(tourID);
                     } else {
                         console.log("Query has more than one data")
