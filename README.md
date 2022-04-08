@@ -90,10 +90,9 @@ Firebase hosting files:
 ```
 
 ## Resource
-Technologies used for this project:
-Logo made by Jack Berena
-tour images from unsplash(Free to use)
-Icons by Google fonts(Free to use)
+*Logo made by Jack Berena
+*Tour images from unsplash(Free to use)
+*Icons by Google fonts(Free to use)
 
 ## Acknowledgement
 * Google Fonts
