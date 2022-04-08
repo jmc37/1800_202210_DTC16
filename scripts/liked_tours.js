@@ -40,10 +40,10 @@ function getBookmarks(user) {
                         let newCard = CardTemplate.content.cloneNode(true);
                         newCard.querySelector('.card-title').innerHTML = tourName
                         newCard.querySelector('.card-length').innerHTML = tourCity
-                        newCard.querySelector('a').onclick = () => setHikeData(ID);
+                        // newCard.querySelector('a').onclick = () => setHikeData(ID);
                         newCard.querySelector('img').src = pictures;
                         tourCardGroup.appendChild(newCard)
-
+                        testTourCard.querySelector('.read-more').href = "tour.html?title=" + title + "&id=" + tourID;
                     } else {
                         console.log("Query has more than one data")
                     }
