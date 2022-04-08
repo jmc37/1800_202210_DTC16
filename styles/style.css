@@ -171,6 +171,7 @@
 #emergency_text{
   text-decoration: none;
   padding-bottom: 120px;
+  color: black;
 }
 /* Navbar */
 #navbar_text{
