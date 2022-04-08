@@ -64,8 +64,7 @@
   }
   #logo{
     width: 250px;
-  height: 250px;
-padding: 20px;}
+  height: 250px;}
 
 .card-img{
   width: 100%;
@@ -194,6 +193,20 @@ padding: 20px;}
    @media only screen and (max-width:500px){
     #travellers_main, #date_end, #dates_start, #search_bar_main{
       width: 31%;
+    }
+   }
+
+   @media only screen and (max-width:900px){
+    #logo{
+      width: 204px;
+      height: 204px;
+    }
+   }
+
+   @media only screen and (max-width:750px){
+    #logo{
+      width: 147px;
+      height: 147px;
     }
    }
 
