@@ -154,7 +154,18 @@ padding: 20px;}
 }
 /* Profile */
 #profile_form{
-  padding-bottom: 50px;
+  padding-bottom: 10px;
+}
+#emergency_button{
+  background-color: red; 
+  font-style: normal;  
+  border-radius: 30px; 
+  font-size: 20px;
+  margin-left: 40px;
+}
+#emergency_text{
+  text-decoration: none;
+  padding-bottom: 120px;
 }
 /* Navbar */
 #navbar_text{
