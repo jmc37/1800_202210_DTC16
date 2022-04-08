@@ -208,19 +208,7 @@
     }
    }
 
-<<<<<<< HEAD
    @media only screen and (max-width:3000px){
-=======
-   @media only screen{
-    .col-md-4, #booked_tours{
-      width: 100%;
-      max-width: 100%;
-      
-    }
-   }
-
-   /* @media only screen and (max-width:3000px){
->>>>>>> b99b9fde407ff5240bb0ca60f7e14e6b204ce8c7
     #logo{
       width: 204px;
       height: 204px;
@@ -264,8 +252,11 @@
   padding-right: 50px;
 }
 /*booked tour page */
-#booked_tour{
-  width: 100%;
+#booked_tours{
+  max-width: 100%;
+  padding-bottom: 50px;
+ 
+  
 }
 
 
