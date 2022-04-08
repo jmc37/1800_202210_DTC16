@@ -49,7 +49,7 @@ function submitUserInfo() {
                     Guide: tourGuide
                 }).then(function () {
                     console.log("New user added to firestore");
-                    window.location.assign("index.html");
+                    window.location.assign("../index.html");
                 })
                 .then(() => {
                     console.log("Document successfully updated!");
