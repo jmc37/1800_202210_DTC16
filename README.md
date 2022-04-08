@@ -41,9 +41,9 @@ It has the following subfolders and files:
 ├── pages                           # Folder for styles
     /booked.html                    # booking HTML file, this is where user can see their booked tour
     /createtour.html                # Creating tour HTML file, this is where user see when user click create tour button
-    /Faq.html                       # FAQ HTML file, this is what users see if they click FAQ icon
+    /faq.html                       # FAQ HTML file, this is what users see if they click FAQ icon
     /guide.html                     # guide HTMl file, this will shows information about guide
-    /Liked_tours.html               # bookmark HTML file, this is what users see if user click favorite icon in navbar
+    /liked_tours.html               # bookmark HTML file, this is what users see if user click favorite icon in navbar
     /login.html                     # login HTML file, this is where user can sign up or sign in
     /mainpage.html                  #
     /message.html                   # 
