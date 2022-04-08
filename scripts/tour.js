@@ -34,6 +34,7 @@ function displaytour() {
             var tour_img = thisTour.tourImage;
             var tour_price = thisTour.tourActualPrice
             var tour_activity = thisTour.tourActivity
+            var tour_language = thisTour.language
             var tourID = thisTour.tourID;
             document.getElementById('city_img_name').innerHTML = tourcity;
             document.getElementById('tour_title').innerHTML = tourtitle;
@@ -41,6 +42,7 @@ function displaytour() {
             document.getElementById('description').innerHTML = tour_description;
             document.getElementById('price').innerHTML = tour_price;
             document.getElementById('activity').innerHTML = tour_activity;
+            document.getElementById('language').innerHTML = tour_language;
             document.getElementById('tour_img_').setAttribute("src", tour_img)
             document.getElementById('book_btn').onclick = () => savetour(tourID);
         })
