@@ -95,6 +95,6 @@ Firebase hosting files:
 *Icons by Google fonts(Free to use)
 
 ## Acknowledgement
-* Google Fonts
-* jQuery
-* Bootstrap
+* Google Fonts(https://fonts.google.com/)
+* jQuery(https://developers.google.com/speed/libraries#jquery)
+* Bootstrap(https://getbootstrap.com/)
