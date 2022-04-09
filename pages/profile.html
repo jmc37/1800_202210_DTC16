@@ -5,24 +5,23 @@
     <title>Profile Page</title>
     <meta name="comp1800 template" content="My 1800 App">
 
-    <!------------------------>
     <!-- Required meta tags -->
-    <!------------------------>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!------------------------------------------>
     <!-- Bootstrap Library CSS JS CDN go here -->
-    <!------------------------------------------>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
+    <!-- Google Icons (Material Design)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- our own style.css -->
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <!-- Firebase 8 Library related JS, JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -30,23 +29,10 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <!-------------------------------------------->
-    <!-- Other libraries and styles of your own -->
-    <!-------------------------------------------->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/style.css">
-
 </head>
 
 <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
 
-    <!-- our own navbar goes here -->
-    <nav id="navbarPlaceholder"></nav>
-
-    <!-- the body of your page goes here -->
     <div class="container-fluid bg-white text-dark p-0">
         <div class="container bg-white p-3">
             <h1 class="display-4">Gutentag, <span id="name-goes-here"></span></h1>
@@ -88,12 +74,11 @@
     <button id="emergency_button"><a href="tel:7788280689" id="emergency_text">Emergency Help Button</a></button>
 
 
+    <!-- navbar -->
     <nav id="navbarPlaceholder"></nav>
 
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
+    <!-- Firebase and our own script -->
     <script src="../scripts/FirebaseAPI_TEAM16.js"></script>
     <script src="../scripts/profile.js"></script>
     <script src="../scripts/skeleton.js"></script>
