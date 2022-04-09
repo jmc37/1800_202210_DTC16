@@ -51,8 +51,10 @@ function getBookmarks(user) {
                         newCard.querySelector('a').onclick = () => setTourData(tourID);
                         newCard.querySelector('.get_detail').href = "tour.html?title=" + title + "&id=" + tourID;
                         newCard.querySelector('img').src = doc.tourImage;
+                        newCard.querySelector('.cancel_btn').id = 'cancel-' + tourID;
+                        newCard.querySelector('.cancel_btn').onclick = () => cancelTour(tourID);
                         tourCardGroup.appendChild(newCard);
-                        document.getElementById('cancel_btn').onclick = () => cancelTour(tourID);
+
                     } else {
                         console.log("Query has more than one data")
                     }
@@ -63,21 +65,14 @@ function getBookmarks(user) {
         })
 }
 
-// Store tourID in localstorage
-function setTourData(tourID) {
-    console.log(tourID)
-    localStorage.setItem('tourID', tourID);
-}
-
-let BookID = localStorage.getItem("tourID")
-
-// Delete certain tour from user's bookmark in firestore
+//Delete booked tour from user's document in firestore
 function cancelTour(tourID) {
+    localStorage.setItem('tourID', tourID);
     currentUser.update({
             booked: firebase.firestore.FieldValue.arrayRemove(tourID)
         })
         .then(function () {
+            document.getElementById('cancel-' + tourID).innerText = 'Cancelled';
             console.log("Tour has been cancelled");
-            document.getElementById('cancel_btn').innerText = 'Cancelled';
         });
 }

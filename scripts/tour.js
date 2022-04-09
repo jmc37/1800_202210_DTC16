@@ -44,7 +44,7 @@ function displaytour() {
             document.getElementById('activity').innerHTML = tour_activity;
             document.getElementById('language').innerHTML = tour_language;
             document.getElementById('tour_img_').setAttribute("src", tour_img)
-            document.getElementById('book_btn').onclick = () => savetour(tourID);
+            document.getElementById('book_btn').onclick = () => booktour(tourID);
         })
 }
 
@@ -80,7 +80,7 @@ function displayreview() {
 displayreview()
 
 //Book a tour
-function savetour(tourID) {
+function booktour(tourID) {
     currentUser.set({
             booked: firebase.firestore.FieldValue.arrayUnion(tourID)
         }, {
