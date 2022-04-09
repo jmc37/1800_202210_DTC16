@@ -12,7 +12,7 @@ firebase.auth().onAuthStateChanged(user => {
 //Get search keyword from local storage
 var searchkeyword = localStorage.getItem("searchkeyword");
 
-//Display search result
+//Display search result(Read)
 function populateCardsDynamically() {
     db.collection("tours").where("city", "==", searchkeyword)
         .limit(10)
@@ -48,7 +48,7 @@ function populateCardsDynamically() {
 populateCardsDynamically();
 
 
-//save bookmark in user document in firestore
+//save bookmark in user document in firestore(Write)
 function saveBookmark(tourID) {
     currentUser.set({
             bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)

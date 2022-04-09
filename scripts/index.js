@@ -36,13 +36,13 @@ function populateCardsDynamically() {
         })
 }
 populateCardsDynamically();
-//display tour cards in index page
+//Display tour cards in index page
 
 
-//save bookmark in user document in firestore
+//Save bookmark in user document in firestore(write)
 function saveBookmark(tourID) {
     currentUser.set({
-            bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)    //save bookmark in array
+            bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)    //save bookmark in array in Firestore(Write)
         }, {
             merge: true
         })

@@ -1,5 +1,5 @@
 var tourID = localStorage.getItem("tourID");   //Get data from local storage
-db.collection("tours").where("tourTitle", "==", tourID)    //Get tour data using tour ID that is stored in local storage
+db.collection("tours").where("tourTitle", "==", tourID)    //Get tour data using tour ID that is stored in local storage(Read)
     .get()
     .then(queryGuide => {
         size = queryGuide.size;

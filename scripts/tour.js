@@ -51,7 +51,7 @@ function displaytour() {
 
 displaytour()
 
-//Display review of the tour
+//Display review of the tour(read)
 function displayreview() {
 
     db.collection("Reviews").where("tourID", "==", id)
@@ -79,7 +79,7 @@ function displayreview() {
 
 displayreview()
 
-//Book a tour
+//Book a tour(Write in Firebase)
 function booktour(tourID) {
     currentUser.set({
             booked: firebase.firestore.FieldValue.arrayUnion(tourID)

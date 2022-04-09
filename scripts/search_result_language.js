@@ -15,7 +15,7 @@ var searchkeyword = localStorage.getItem("searchkeyword");
 var searchfilter = localStorage.getItem("searchfilter");
 
 
-//Display filtered result
+//Display filtered result(Read)
 function populateCardsDynamically() {
     db.collection("tours").where("city", "==", searchkeyword).where("language", "==", searchfilter)
         .limit(10)
@@ -51,7 +51,7 @@ function populateCardsDynamically() {
 populateCardsDynamically();
 
 
-//save bookmark in user document in firestore
+//save bookmark in user document in firestore(Write)
 function saveBookmark(tourID) {
     currentUser.set({
             bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)

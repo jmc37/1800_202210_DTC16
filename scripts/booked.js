@@ -24,7 +24,7 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
-//Get bookmarks from firestore
+//Read bookmarks from firestore
 function getBookmarks(user) {
     db.collection("users").doc(user.uid).get()
         .then(userDoc => {

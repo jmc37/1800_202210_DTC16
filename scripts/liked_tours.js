@@ -20,7 +20,7 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
-//Get bookmark data from Firestore using tourID
+//Get bookmark data from Firestore using tourID(Read)
 function getBookmarks(user) {
     db.collection("users").doc(user.uid).get()
         .then(userDoc => {

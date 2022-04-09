@@ -1,4 +1,4 @@
-//Get values from createtour.html form
+//Read values from createtour.html form
 function populateInfo() {
     console.log('works')
     tourT = $("#inputTour").val()
@@ -15,7 +15,7 @@ function populateInfo() {
     alert("submitted!")
     //Alert user that form was submitted
 
-    //Creates tour in tours collection in firestore
+    //Creates tour in tours collection in firestore(Write)
     var tourRef = db.collection("tours")
     tourRef.add({
         tourTitle: tourT,

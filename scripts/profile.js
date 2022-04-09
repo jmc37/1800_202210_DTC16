@@ -44,7 +44,7 @@ function editUserInfo() {
     document.getElementById('personalInfoFields').disabled = false;
 }
 
-//Store or Update user info in firestore
+//Store or Update user info in firestore(Write, Update)
 function saveUserInfo() {
     userName = document.getElementById('nameInput').value;
     userAddress = document.getElementById('addressInput').value;
