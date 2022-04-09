@@ -45,8 +45,6 @@ It has the following subfolders and files:
     /guide.html                     # guide HTMl file, this will shows information about guide
     /liked_tours.html               # bookmark HTML file, this is what users see if user click favorite icon in navbar
     /login.html                     # login HTML file, this is where user can sign up or sign in
-    /mainpage.html                  #
-    /message.html                   # 
     /profile.html                   # profile HTML file, this is where user can see and edit their profile
     /review.html                    # review HTML file, this is where user can leave a review for tour.
     /search_result_activity.html    # search result HTML file, this is what users see if they filter tour by activity
@@ -77,7 +75,7 @@ It has the following subfolders and files:
     /tour.js                        # js file for tour.html
 
 ├── styles                          # Folder for styles
-    /style.css                      # 
+    /style.css                      # CSS file for styles
 
 ├── text                            # Folder for styles
     /nav.html                       # navbar HTML file, this shows our navbar
