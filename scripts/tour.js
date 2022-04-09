@@ -16,10 +16,10 @@ firebase.auth().onAuthStateChanged(user => {
 
 
 var params = new URL(window.location.href);
-var id = params.searchParams.get("id");
-var title = params.searchParams.get("title");
+var id = params.searchParams.get("id");  //Get data from URL
+var title = params.searchParams.get("title");  //Get data from URL
 
-
+//Display detailed tour info
 function displaytour() {
     db.collection("tours").where("tourID", "==", id)
         .get()
@@ -51,7 +51,7 @@ function displaytour() {
 
 displaytour()
 
-
+//Display review of the tour
 function displayreview() {
 
     db.collection("Reviews").where("tourID", "==", id)
@@ -79,7 +79,7 @@ function displayreview() {
 
 displayreview()
 
-
+//Book a tour
 function savetour(tourID) {
     currentUser.set({
             booked: firebase.firestore.FieldValue.arrayUnion(tourID)

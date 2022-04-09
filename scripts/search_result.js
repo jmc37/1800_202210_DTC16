@@ -9,14 +9,11 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
-
+//Get search keyword from local storage
 var searchkeyword = localStorage.getItem("searchkeyword");
 
-
+//Display search result
 function populateCardsDynamically() {
-    let hikeCardTemplate = document.getElementById("hikeCardTemplate");
-    let hikeCardGroup = document.getElementById("hikeCardGroup");
-
     db.collection("tours").where("city", "==", searchkeyword)
         .limit(10)
         .get()
@@ -50,10 +47,8 @@ function populateCardsDynamically() {
 
 populateCardsDynamically();
 
-function goToTour() {
-    window.location.href = "tour.html"
-}
 
+//save bookmark in user document in firestore
 function saveBookmark(tourID) {
     currentUser.set({
             bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)
@@ -67,30 +62,28 @@ function saveBookmark(tourID) {
         });
 }
 
-function setHikeData(id) {
-    localStorage.setItem('tourID', id);
-}
-
+//Store Search keyworld in local storage to query through firestore as well as pass it to other pages
 function setSearchBarCityName() {
     var searchkeyword = $('#search_bar').val()
     console.log(searchkeyword)
     localStorage.setItem('searchkeyword', searchkeyword);
 }
 
-
+//jQuery setup
 function setup() {
     $('.search_btn').click(setSearchBarCityName);
 }
 
 $(document).ready(setup);
 
+//Store filter criteria in local storage to pass it to other pages
 function setSearchFilter() {
     var searchfilter = $(this).attr("id")
     console.log(searchfilter)
     localStorage.setItem('searchfilter', searchfilter);
 }
 
-
+//jQuery setup
 function setup() {
     $('.filter_btn').click(setSearchFilter);
 }

@@ -1,5 +1,6 @@
 var currentUser
 
+//Display user's info
 function populateInfo() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -30,7 +31,7 @@ function populateInfo() {
         } else {
 
             console.log("No user is signed in");
-            location.href = "login.html"
+            location.href = "login.html"        //Redirect to login page if user is not signed in
         }
     });
 }
@@ -38,10 +39,12 @@ function populateInfo() {
 
 populateInfo();
 
+//Edit user's info
 function editUserInfo() {
     document.getElementById('personalInfoFields').disabled = false;
 }
 
+//Store or Update user info in firestore
 function saveUserInfo() {
     userName = document.getElementById('nameInput').value;
     userAddress = document.getElementById('addressInput').value;
@@ -62,12 +65,13 @@ function saveUserInfo() {
                 })
                 .then(() => {
                     console.log("Document successfully updated!");
-                    document.getElementById('personalInfoFields').disabled = true;
+                    document.getElementById('personalInfoFields').disabled = true;  //Disable fields to prevent editting
                 })
         }
     })
 }
 
+//customize the page with user name.
 function insertName() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {

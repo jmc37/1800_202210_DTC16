@@ -24,6 +24,7 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
+//Get bookmarks from firestore
 function getBookmarks(user) {
     db.collection("users").doc(user.uid).get()
         .then(userDoc => {
@@ -62,6 +63,7 @@ function getBookmarks(user) {
         })
 }
 
+// Store tourID in localstorage
 function setTourData(tourID) {
     console.log(tourID)
     localStorage.setItem('tourID', tourID);
@@ -69,6 +71,7 @@ function setTourData(tourID) {
 
 let BookID = localStorage.getItem("tourID")
 
+// Delete certain tour from user's bookmark in firestore
 function cancelTour(tourID) {
     currentUser.update({
             booked: firebase.firestore.FieldValue.arrayRemove(tourID)

@@ -1,5 +1,6 @@
 var currentUser
 
+// Populate page with user's info based on user data in firestore
 function populateInfo() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -30,11 +31,13 @@ function populateInfo() {
 }
 populateInfo()
 
+//Allow user to edit user info
 function editUserInfo() {
-    document.getElementById('personalInfoFields').disabled = false;
+    document.getElementById('personalInfoFields').disabled = false; //activate field to edit
 }
 editUserInfo();
 
+//Update user info in user collection in firestore
 function submitUserInfo() {
     userName = document.getElementById('nameInput').value;
     userCity = document.getElementById('cityInput').value;
@@ -49,7 +52,7 @@ function submitUserInfo() {
                     Guide: tourGuide
                 }).then(function () {
                     console.log("New user added to firestore");
-                    window.location.assign("../index.html");
+                    window.location.assign("../index.html");    //Redirect to index after store user info
                 })
                 .then(() => {
                     console.log("Document successfully updated!");

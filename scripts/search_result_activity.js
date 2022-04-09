@@ -9,16 +9,15 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
-
+//Get search keyword from local storage
 var searchkeyword = localStorage.getItem("searchkeyword");
+//Get filter criteria from local storage
 var searchfilter = localStorage.getItem("searchfilter");
 
 
+//Display filtered result
 function populateCardsDynamically() {
-    let hikeCardTemplate = document.getElementById("hikeCardTemplate");
-    let hikeCardGroup = document.getElementById("hikeCardGroup");
-
-    db.collection("tours").where("city", "==", searchkeyword).where("tourActivity", "==", searchfilter)
+    db.collection("tours").where("city", "==", searchkeyword).where("tourActivity", "==", searchfilter) //query firestore and return the results that meets both criteria
         .limit(10)
         .get()
         .then(allGuides => {
@@ -42,7 +41,7 @@ function populateCardsDynamically() {
                     "Details: " + description + " <br>";
                 testTourCard.querySelector('i').id = 'save-' + tourID;
                 testTourCard.querySelector('i').onclick = () => saveBookmark(tourID);
-                testTourCard.querySelector('.read-more').href = "tour.html?title=" + title + "&id=" + tourID;
+                testTourCard.querySelector('.read-more').href = "tour.html?title=" + title + "&id=" + tourID;  // Redirect to tour page
                 TourCardGroup.appendChild(testTourCard);
             })
 
@@ -51,10 +50,7 @@ function populateCardsDynamically() {
 
 populateCardsDynamically();
 
-function goToTour() {
-    window.location.href = "tour.html"
-}
-
+//save bookmark in user document in firestore
 function saveBookmark(tourID) {
     currentUser.set({
             bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)
@@ -68,18 +64,16 @@ function saveBookmark(tourID) {
         });
 }
 
-function setHikeData(id) {
-    localStorage.setItem('tourID', id);
-}
 
 
+//Store filter criteria in local storage to pass it to other pages
 function setSearchFilter() {
     var searchfilter = $(this).attr("id")
     console.log(searchfilter)
     localStorage.setItem('searchfilter', searchfilter);
 }
 
-
+//jQuery setup
 function setup() {
     $('.filter_btn').click(setSearchFilter);
 }

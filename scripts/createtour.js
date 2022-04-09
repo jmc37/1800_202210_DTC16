@@ -1,3 +1,4 @@
+//Get values from createtour.html form
 function populateInfo() {
     console.log('works')
     tourT = $("#inputTour").val()
@@ -12,8 +13,9 @@ function populateInfo() {
     console.log(city_value)
 
     alert("submitted!")
+    //Alert user that form was submitted
 
-
+    //Creates tour in tours collection in firestore
     var tourRef = db.collection("tours")
     tourRef.add({
         tourTitle: tourT,
@@ -32,7 +34,7 @@ function populateInfo() {
 
 
 
-
+//jQuery setup
 function setup() {
     $('#submit').click(populateInfo);
 

@@ -1,13 +1,16 @@
+ // Show tour details.
 function showDetails() {
     let params = new URL(window.location.href);
-    let id = params.searchParams.get("tourID");
-    let tourName = params.searchParams.get("tourTitle");
+    let id = params.searchParams.get("tourID");          //Get data from URL
+    let tourName = params.searchParams.get("tourTitle");  //Get data from URL
 
     let message = "Tour Name is: " + tourName;
     message += " &nbsp | Document id is:  " + id;
 }
 showDetails();
 
+
+//Authentication
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         getBookmarks(user)
@@ -17,6 +20,7 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
+//Get bookmark data from Firestore using tourID
 function getBookmarks(user) {
     db.collection("users").doc(user.uid).get()
         .then(userDoc => {
@@ -31,7 +35,7 @@ function getBookmarks(user) {
                     queryData = snap.docs;
 
 
-                    if (size == 1) {
+                    if (size == 1) {     //display bookmarked tour details if there is only 1 query result
                         var doc = queryData[0].data();
                         var title = doc.tourTitle;
                         var pictures = doc.tourImage;
@@ -45,11 +49,12 @@ function getBookmarks(user) {
                             "Language: " + doc.language + " <br>" +
                             "Details: " + doc.description + " <br>";
                         newCard.querySelector('img').src = pictures;
+                        newCard.querySelector('a').onclick = () => setTourData(tourID);
                         newCard.querySelector('.read-more').href = "tour.html?title=" + title + "&id=" + tourID;
                         tourCardGroup.appendChild(newCard)
 
                     } else {
-                        console.log("Query has more than one data")
+                        console.log("Query has more than one data")   //There is 2 or more query results
                     }
 
                 })
@@ -57,3 +62,11 @@ function getBookmarks(user) {
         })
 
 }
+
+// Store tourID in localstorage
+function setTourData(tourID) {
+    console.log(tourID)
+    localStorage.setItem('tourID', tourID);
+}
+
+let BookID = localStorage.getItem("tourID")

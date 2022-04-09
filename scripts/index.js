@@ -9,11 +9,9 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 function populateCardsDynamically() {
-    let hikeCardTemplate = document.getElementById("hikeCardTemplate");
-    let hikeCardGroup = document.getElementById("hikeCardGroup");
-
+//Show popular tours in index page
     db.collection("tours")
-        .limit(10)
+        .limit(10)  //Show max 10 tours in index page.
         .get()
         .then(allGuides => {
             allGuides.forEach(doc => {
@@ -38,11 +36,13 @@ function populateCardsDynamically() {
         })
 }
 populateCardsDynamically();
+//display tour cards in index page
 
 
+//save bookmark in user document in firestore
 function saveBookmark(tourID) {
     currentUser.set({
-            bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)
+            bookmarks: firebase.firestore.FieldValue.arrayUnion(tourID)    //save bookmark in array
         }, {
             merge: true
         })
@@ -53,13 +53,14 @@ function saveBookmark(tourID) {
         });
 }
 
+//Store search keyword in local storage so that app can query firestore with it.
 function setSearchBarCityName() {
     var searchkeyword = $('#search_bar').val()
     console.log(searchkeyword)
     localStorage.setItem('searchkeyword', searchkeyword);
 }
 
-
+//jQuery setup
 function setup() {
     $('.search_btn').click(setSearchBarCityName);
 }
