@@ -69,12 +69,6 @@ function setSearchBarCityName() {
     localStorage.setItem('searchkeyword', searchkeyword);
 }
 
-//jQuery setup
-function setup() {
-    $('.search_btn').click(setSearchBarCityName);
-}
-
-$(document).ready(setup);
 
 //Store filter criteria in local storage to pass it to other pages
 function setSearchFilter() {
@@ -83,8 +77,10 @@ function setSearchFilter() {
     localStorage.setItem('searchfilter', searchfilter);
 }
 
+
 //jQuery setup
 function setup() {
+    $('.search_btn').click(setSearchBarCityName);
     $('.filter_btn').click(setSearchFilter);
 }
 
