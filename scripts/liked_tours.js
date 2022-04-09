@@ -38,16 +38,16 @@ function getBookmarks(user) {
                         var tourID = doc.tourID;
                         let newCard = CardTemplate.content.cloneNode(true);
                         newCard.querySelector('.card-title').innerHTML = title
-                        newCard.querySelector('.card-length').innerHTML = 
-                        "City: " + doc.city + " <br>" +
-                        "Price: " + doc.tourActualPrice + " <br>" +
-                        "Activity: " + doc.tourActivity + " <br>" +
-                        "Language: " + doc.language + " <br>" +
-                        "Details: " + doc.description + " <br>";
+                        newCard.querySelector('.card-length').innerHTML =
+                            "City: " + doc.city + " <br>" +
+                            "Price: " + doc.tourActualPrice + " <br>" +
+                            "Activity: " + doc.tourActivity + " <br>" +
+                            "Language: " + doc.language + " <br>" +
+                            "Details: " + doc.description + " <br>";
                         newCard.querySelector('img').src = pictures;
                         newCard.querySelector('.read-more').href = "tour.html?title=" + title + "&id=" + tourID;
                         tourCardGroup.appendChild(newCard)
-                        
+
                     } else {
                         console.log("Query has more than one data")
                     }
